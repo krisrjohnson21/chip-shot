@@ -3,4 +3,14 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  has_many :reviews
+  has_many :rounds
+
+  validates :first, presence: true
+  validates :last, presence: true
+  validates :city, presence: true
+  validates :state, presence: true
+  validates :handicap, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 75 }
+  validates :bio, presence: true
 end
