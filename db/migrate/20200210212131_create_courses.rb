@@ -12,6 +12,7 @@ class CreateCourses < ActiveRecord::Migration[5.2]
       t.string :carts, null: false
       t.string :rentals, null: false
       t.string :lessons, null: false
+      t.string :url
 
       t.timestamps null: false
     end

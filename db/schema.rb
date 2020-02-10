@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_212131) do
     t.string "carts", null: false
     t.string "rentals", null: false
     t.string "lessons", null: false
+    t.string "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
