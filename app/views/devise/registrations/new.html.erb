@@ -1,11 +1,42 @@
-<h2>Sign up</h2>
+<h2 class="text-center">Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class="form">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :first, "First Name" %><br />
+    <%= f.text_field :first, autofocus: true, autocomplete: "first" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last, "Last Name" %><br />
+    <%= f.text_field :last, autofocus: true, autocomplete: "last" %>
+  </div>
 
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city, autofocus: true, autocomplete: "city" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :state %><br />
+    <%= f.text_field :state, autofocus: true, autocomplete: "state" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :handicap %><br />
+    <%= f.text_field :handicap, autofocus: true, autocomplete: "handicap" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :bio, "Tell Us Why You Love Golf" %><br />
+    <%= f.text_field :bio, autofocus: true, autocomplete: "bio" %>
   </div>
 
   <div class="field">
@@ -22,8 +53,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class: "button" %>
   </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <% end %>
+</div>
