@@ -21,7 +21,7 @@ feature 'user registers', %Q{
     fill_in 'City', with: 'Boston'
     fill_in 'State', with: 'Massachusetts'
     fill_in 'Handicap', with: 25
-    fill_in 'Bio', with: 'Not very good'
+    fill_in 'Tell Us Why You Love Golf', with: 'Not very good'
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
 
