@@ -1,7 +1,17 @@
 import React from 'react'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+
+import CoursesIndexContainer from './index/CoursesIndexContainer'
 
 export const App = (props) => {
-  return (<h1>Make It So React</h1>)
+  return (
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={CoursesIndexContainer} />
+        <Route exact path="/courses" component={CoursesIndexContainer} />
+      </Switch>
+    </BrowserRouter>
+  )
 }
 
 export default App
