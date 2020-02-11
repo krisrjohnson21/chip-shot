@@ -7,10 +7,12 @@ body {
   font-family: 'Oswald';
 }
 
-.top-bar .button, a {
-  background-color: $dark-green;
-  color: $white;
-  font-family: "Oswald";
+.top-bar {
+  .button, a {
+    background-color: $dark-green;
+    color: $white;
+    font-family: "Oswald";
+  }
 }
 
 .top-bar a:hover {
@@ -32,4 +34,9 @@ body {
 
 #app {
   padding: 20px;
+}
+
+.index-img {
+  height: auto;
+  width: 500px;
 }

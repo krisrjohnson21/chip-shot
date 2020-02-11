@@ -11,8 +11,11 @@ describe Course do
   it { should have_valid(:membership).when("Public") }
   it { should_not have_valid(:membership).when(nil, "") }
 
-  it { should have_valid(:holes).when(9, 18) }
+  it { should have_valid(:holes).when(9, 18, 27, 36) }
   it { should_not have_valid(:holes).when(nil, 4, 12) }
+
+  it { should have_valid(:par).when(36, 72) }
+  it { should_not have_valid(:par).when(nil, 4, 90) }
 
   it { should have_valid(:city).when("Melrose") }
   it { should_not have_valid(:city).when(nil, "") }

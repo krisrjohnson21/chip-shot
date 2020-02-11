@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  root 'static_pages#index'
+  root "static_pages#index"
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  get "/courses", to: "static_pages#index"
+
+  namespace "api" do
+    namespace "v1" do
+      resources :courses, only: [:index]
+    end
+  end
 end

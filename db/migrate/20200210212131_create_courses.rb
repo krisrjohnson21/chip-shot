@@ -4,6 +4,7 @@ class CreateCourses < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.string :membership, null: false
       t.integer :holes, null: false
+      t.integer :par, null: false
       t.string :address, null: false
       t.string :city, null: false
       t.string :state, null: false
