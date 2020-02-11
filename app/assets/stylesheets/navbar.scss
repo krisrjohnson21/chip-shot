@@ -1,0 +1,35 @@
+$dark-green: #272D2D;
+$pop-green: #23CE6B;
+$background: #EDF5FC;
+$white: #FFFFFF;
+
+body {
+  font-family: 'Oswald';
+}
+
+.top-bar .button, a {
+  background-color: $dark-green;
+  color: $white;
+  font-family: "Oswald";
+}
+
+.top-bar a:hover {
+  color: $white;
+}
+
+.right {
+  padding-right: 50px;
+}
+
+.left {
+  padding-left: 50px;
+}
+
+.top-bar .button {
+  margin: 10px;
+  border: 1px solid $white;
+}
+
+#app {
+  padding: 20px;
+}
