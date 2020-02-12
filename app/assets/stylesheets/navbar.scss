@@ -3,20 +3,25 @@ $pop-green: #23CE6B;
 $background: #EDF5FC;
 $white: #FFFFFF;
 
-body {
-  font-family: 'Oswald';
-}
-
 .top-bar {
-  .button, a {
+  a {
+    color: $white;
+  }
+  .button {
     background-color: $dark-green;
     color: $white;
     font-family: "Oswald";
+    a {
+      background-color: inherit;
+      color: inherit;
+      font-family: inherit;
+    }
   }
 }
 
-.top-bar a:hover {
-  color: $white;
+.top-bar button:hover {
+  color: $dark-green;
+  background-color: $white
 }
 
 .right {
@@ -30,12 +35,4 @@ body {
 .top-bar .button {
   margin: 10px;
   border: 1px solid $white;
-}
-
-#app {
-  padding: 20px;
-}
-
-.external-link {
-  font-size: 24px;
 }
