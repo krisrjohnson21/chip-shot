@@ -28,11 +28,11 @@ const CourseShow = (props) => {
           <hr />
           <h2>{props.course.name}</h2>
           <br />
-          <h4>{props.course.address}</h4>
-          <h4>{props.course.city}, {props.course.state}</h4>
+          <h4 id="address">{props.course.address}</h4>
+          <h4 id="city-state">{props.course.city}, {props.course.state}</h4>
         </div>
         <div className="back">
-          <h2>{props.course.name}</h2>
+          <h2 id="course-name">{props.course.name}</h2>
           <hr />
           <h4 id="membership">Membership: {props.course.membership}</h4>
           <h4 id="holes">Holes: {props.course.holes} | Par: {props.course.par}</h4>
@@ -42,7 +42,7 @@ const CourseShow = (props) => {
           <h4 id="rentals">{rentals}</h4>
           <h4 id="lessons">{lessons}</h4>
           <hr />
-          <a href={props.course.website} target="blank" className="external-link">Click here for course website</a>
+          <a href={props.course.website} target="blank" className="external-link" id="link">Click here for course website</a>
         </div>
       </div>
       <div>
