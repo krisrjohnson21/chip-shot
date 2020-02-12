@@ -6,7 +6,7 @@ import ErrorList from './ErrorList'
 
 const ReviewFormContainer = props => {
   const [newReview, setNewReview] = useState({
-    rating: 1,
+    rating: 3,
     body: ""
   })
 
@@ -14,7 +14,7 @@ const ReviewFormContainer = props => {
 
   const clearForm = (event) => {
     setNewReview({
-      rating: 0,
+      rating: 3,
       body: ""
     })
     setErrors({})
@@ -54,8 +54,8 @@ const ReviewFormContainer = props => {
   }
 
   return(
-    <form className="text-center" onSubmit={handleSubmit}>
-      <div>
+    <form className="small-6 columns" onSubmit={handleSubmit}>
+      <div className="review-form">
         <h5>{props.signInError}</h5>
       </div>
       <ErrorList errors={errors} />
@@ -77,7 +77,7 @@ const ReviewFormContainer = props => {
         handleChange={handleFieldChange}
       />
 
-      <div className="button-group">
+    <div className="review-button-group">
         <input className="button" type="submit" value="Submit" />
         <input className="button" type="button" value="Clear Form" onClick={clearForm} />
       </div>

@@ -58,40 +58,45 @@ const CourseShowContainer = (props) => {
 
   const reviewList = reviews.map(review => {
     return (
-      <ReviewTile
-        key={review.id}
-        id={review.id}
-        fullName={review.userFullName}
-        rating={review.rating}
-        body={review.body}
-      />
+      <>
+        <ReviewTile
+          key={review.id}
+          id={review.id}
+          fullName={review.userFullName}
+          rating={review.rating}
+          body={review.body}
+        />
+        <hr />
+      </>
     );
   });
 
   return(
-    <>
-      <div className="text-center">
-        <CourseShow key={course.id} course={course} />
-      <hr />
-      </div>
-      <div className="text-center">
-        <h2>
-          <strong>Reviews for {course.name}</strong>
-        </h2>
-        <div>{reviewList}</div>
-      </div>
+    <div className="body">
+      <div className="grid-x">
+        <div className="cell small-6">
+          <CourseShow key={course.id} course={course} />
+        </div>
 
-      <div>
-        <hr />
-        <h2 className='text-center'>
-          <strong>Add a New Review for {course.name}</strong>
-        </h2>
-        <ReviewFormContainer
-          addNewReview={addNewReview}
-          reviews={course.reviews}
-        />
+        <div className="review-box">
+          <div className="cell small-6">
+            <div className="text-center">
+              <h2>
+                <strong>Reviews for {course.name}</strong>
+              </h2>
+              <div>{reviewList}</div>
+              <h2>
+                <strong>Add a New Review</strong>
+              </h2>
+              <ReviewFormContainer
+                addNewReview={addNewReview}
+                reviews={course.reviews}
+                />
+            </div>
+          </div>
+        </div>
       </div>
-    </>
+    </div>
   )
 }
 

@@ -1,4 +1,8 @@
-.button-group {
+#body, #rating {
+  width: 30%;
+}
+
+.review-button-group {
   margin: 10px auto;
   display: block;
   width: 60%;
@@ -6,4 +10,9 @@
   .button {
     margin: 0px 5px 20px 5px;
   }
+}
+
+.callout {
+  width: 25%;
+  margin: 10px auto;
 }
