@@ -21,18 +21,35 @@ const CourseShow = (props) => {
   }
 
   return(
-    <div>
-      <img src={props.course.url} className="show-img"></img>
-      <h2>{props.course.name}</h2>
-      <h4 id="membership">Membership: {props.course.membership}</h4>
-      <h4 id="holes">Holes: {props.course.holes} | Par: {props.course.par}</h4>
-      <h4 id="address">Address: {props.course.address}, {props.course.city}, {props.course.state}</h4>
-      <h4 id="range"><li>{range}</li></h4>
-      <h4 id="carts"><li>{carts}</li></h4>
-      <h4 id="rentals"><li>{rentals}</li></h4>
-      <h4 id="lessons"><li>{lessons}</li></h4>
-      <a href={props.course.website} target="blank" className="external-link">Course Website</a>
-    </div>
+    <>
+      <div className="flip">
+        <div className="front">
+          <img src={props.course.url} className="show-img"></img>
+          <hr />
+          <h2>{props.course.name}</h2>
+          <br />
+          <h4 id="address">{props.course.address}</h4>
+          <h4 id="city-state">{props.course.city}, {props.course.state}</h4>
+        </div>
+        <div className="back">
+          <h2 id="course-name">{props.course.name}</h2>
+          <hr />
+          <h4 id="membership">Membership: {props.course.membership}</h4>
+          <h4 id="holes">Holes: {props.course.holes} | Par: {props.course.par}</h4>
+          <hr />
+          <h4 id="range">{range}</h4>
+          <h4 id="carts">{carts}</h4>
+          <h4 id="rentals">{rentals}</h4>
+          <h4 id="lessons">{lessons}</h4>
+          <hr />
+          <a href={props.course.website} target="blank" className="external-link" id="link">Click here for course website</a>
+        </div>
+      </div>
+      <div>
+        <Link to="/courses" className="button show-button">Add a review for this course</Link>
+        <Link to="/courses" className="button show-button">Back to course list</Link>
+      </div>
+    </>
   )
 }
 

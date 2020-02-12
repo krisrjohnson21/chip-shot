@@ -3,10 +3,16 @@ $pop-green: #23CE6B;
 $background: #EDF5FC;
 $white: #FFFFFF;
 
+body {
+  font-family: 'Oswald';
+  background-color: $background
+}
+
 .index-div {
   display: inline-block;
   margin: 20px 10px;
 }
+
 .index-img {
   position: relative;
   width: 350px;

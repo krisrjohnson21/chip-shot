@@ -41,7 +41,7 @@ describe("CourseShow", () => {
   });
 
   it("should render an h2 tag with the name of the course", () => {
-    expect(wrapper.find("h2").text()).toBe("Neighborhood Golf Club");
+    expect(wrapper.find("#course-name").text()).toBe("Neighborhood Golf Club");
   });
 
   it("should render an h4 tag with the type of course membership", () => {
@@ -53,36 +53,38 @@ describe("CourseShow", () => {
   });
 
   it("should render an h4 tag with the address of the course", () => {
-    expect(wrapper.find("#address").text()).toBe(
-      "Address: 45 Maple Street, Worcester, Massachusetts"
-    );
+    expect(wrapper.find("#address").text()).toBe("45 Maple Street");
   });
 
-  it("should render an h4 bullet noting whether the course has a driving range", () => {
+  it("should render an h4 tag with the address of the course", () => {
+    expect(wrapper.find("#city-state").text()).toBe("Worcester, Massachusetts");
+  });
+
+  it("should render an h4 if the course has a driving range", () => {
     expect(wrapper.find("#range").text()).toBe(
       "Neighborhood Golf Club has a driving range"
     );
   });
 
-  it("should render an h4 bullet noting whether the course allows carts", () => {
+  it("should render an h4 bullet if the course allows carts", () => {
     expect(wrapper.find("#carts").text()).toBe(
       "Neighborhood Golf Club allows golf carts"
     );
   });
 
-  it("should render an h4 bullet noting whether the course has rental clubs", () => {
+  it("should render an h4 bullet if the course has rental clubs", () => {
     expect(wrapper.find("#rentals").text()).toBe(
       "Neighborhood Golf Club provides club rentals"
     );
   });
 
-  it("should render an h4 bullet noting whether the course offers lessons", () => {
+  it("should render an h4 bullet if the course offers lessons", () => {
     expect(wrapper.find("#lessons").text()).toBe(
       "Neighborhood Golf Club offers playing lessons"
     );
   });
 
   it("should render an anchor tag with a link to the course website", () => {
-    expect(wrapper.find("a").props()["href"]).toBe("www.neighborhoodgolf.com");
+    expect(wrapper.find("#link").props()["href"]).toBe("www.neighborhoodgolf.com");
   });
 });
