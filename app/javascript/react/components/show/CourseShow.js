@@ -26,27 +26,35 @@ const CourseShow = (props) => {
         <div className="front">
           <img src={props.course.url} className="show-img"></img>
           <hr />
-          <h2>{props.course.name}</h2>
-          <br />
-          <h4 id="address">{props.course.address}</h4>
-          <h4 id="city-state">{props.course.city}, {props.course.state}</h4>
+          <div className="text-center">
+            <h2>{props.course.name}</h2>
+            <br />
+            <h4 id="address">{props.course.address}</h4>
+            <h4 id="city-state">{props.course.city}, {props.course.state}</h4>
+          </div>
         </div>
         <div className="back">
-          <h2 id="course-name">{props.course.name}</h2>
-          <hr />
-          <h4 id="membership">Membership: {props.course.membership}</h4>
-          <h4 id="holes">Holes: {props.course.holes} | Par: {props.course.par}</h4>
-          <hr />
-          <h4 id="range">{range}</h4>
-          <h4 id="carts">{carts}</h4>
-          <h4 id="rentals">{rentals}</h4>
-          <h4 id="lessons">{lessons}</h4>
-          <hr />
-          <a href={props.course.website} target="blank" className="external-link" id="link">Click here for course website</a>
+          <div className="text-center">
+            <h2 id="course-name">{props.course.name}</h2>
+            <hr />
+            <h4 id="membership">Membership: {props.course.membership}</h4>
+            <h4 id="holes">Holes: {props.course.holes} | Par: {props.course.par}</h4>
+            <hr />
+            <h4 id="range">{range}</h4>
+            <h4 id="carts">{carts}</h4>
+            <h4 id="rentals">{rentals}</h4>
+            <h4 id="lessons">{lessons}</h4>
+          </div>
         </div>
       </div>
-      <div>
-        <Link to="/courses" className="button show-button">Add a review for this course</Link>
+      <div className="button-group">
+        <a href={props.course.website}
+          target="blank"
+          className="button show-button"
+          id="link"
+        >
+          Click here for course website
+        </a>
         <Link to="/courses" className="button show-button">Back to course list</Link>
       </div>
     </>

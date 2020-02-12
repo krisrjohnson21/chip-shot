@@ -28,8 +28,8 @@ const CoursesIndexContainer = (props) => {
     return (
       <div className="row index-div">
         <div className="columns small-4">
-          <Link to={`/courses/${id}`} key={course.id}>
-            <CourseTile id={course.id} course={course} />
+          <Link to={`/courses/${id}`}>
+            <CourseTile key={course.id} id={course.id} course={course} />
           </Link>
         </div>
       </div>

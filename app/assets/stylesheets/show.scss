@@ -3,8 +3,22 @@ $pop-green: #23CE6B;
 $background: #EDF5FC;
 $white: #FFFFFF;
 
-.text-center {
-  margin: 0px auto;
+.body {
+  padding: 20px;
+  margin: 0px -20px 0px 60px;
+
+  .review-box {
+    margin-left: -30px;
+  }
+}
+
+.review-box {
+  border: 1px solid $dark-green;
+  border-radius: 10px;
+  padding: 10px;
+  height: auto;
+  width: 600px;
+  margin-top: 30px;
 }
 
 .external-link {
@@ -67,11 +81,11 @@ $white: #FFFFFF;
   margin-right: 2px;
   margin-top: 30px;
   margin-bottom: 1em;
-  width: 500px;
+  width: 550px;
   > .front,
   > .back {
     display: block;
-    color: white;
+    color: $white;
     width: inherit;
     background-size: cover !important;
     background-position: center !important;
@@ -87,6 +101,9 @@ $white: #FFFFFF;
   }
 }
 
-.show-button {
-  margin: 0px 10px 20px 10px;
+.button-group {
+  margin-left: 100px;
+  .show-button {
+    margin: 0px 5px 0px 5px;
+  }
 }
