@@ -18,7 +18,7 @@ const CoursesIndexContainer = (props) => {
     })
     .then(response => response.json())
     .then(response => {
-      setCourses(response);
+      setCourses(response.courses);
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }, [])
