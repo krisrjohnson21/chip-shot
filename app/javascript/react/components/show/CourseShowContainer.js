@@ -82,13 +82,13 @@ const CourseShowContainer = (props) => {
           <div className="cell small-6">
             <div className="text-center">
               <h2>
+                <strong>Add New Review</strong>
+              </h2>
+              <h2>
                 <strong>Reviews for {course.name}</strong>
               </h2>
               <hr />
               <div>{reviewList}</div>
-              <h2>
-                <strong>Add New Review</strong>
-              </h2>
               <ReviewFormContainer
                 addNewReview={addNewReview}
                 reviews={course.reviews}

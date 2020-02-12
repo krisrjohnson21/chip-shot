@@ -16,7 +16,7 @@ class Api::V1::ReviewsController < ApiController
     course = Course.find(params["course_id"])
     review.course = course
     review.user = current_user
-    
+
     if review.save
       render json: review
     else
