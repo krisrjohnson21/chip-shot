@@ -84,9 +84,10 @@ const CourseShowContainer = (props) => {
               <h2>
                 <strong>Reviews for {course.name}</strong>
               </h2>
+              <hr />
               <div>{reviewList}</div>
               <h2>
-                <strong>Add a New Review</strong>
+                <strong>Add New Review</strong>
               </h2>
               <ReviewFormContainer
                 addNewReview={addNewReview}
