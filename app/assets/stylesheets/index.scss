@@ -1,0 +1,75 @@
+$dark-green: #272D2D;
+$pop-green: #23CE6B;
+$background: #EDF5FC;
+$white: #FFFFFF;
+
+.index-div {
+  display: inline-block;
+  margin: 20px 10px;
+}
+.index-img {
+  position: relative;
+  width: 350px;
+  height: 250px;
+  border: 5px solid #fff;
+  outline: 1px solid #ccc;
+}
+
+.image-tile {
+  position: relative;
+  display: inline-flex;
+  margin: 8px;
+  transition: .2s;
+  z-index: 2;
+}
+
+.image-tile:hover {
+  transform: scale(1.1);
+  transition: .2s;
+  z-index: 30;
+
+  .index-image-text {
+    background-color: $pop-green;
+    transition: .3s;
+  }
+}
+
+.course-title-text, .course-title-text a {
+  margin: auto;
+}
+
+.index-image-text {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  color: $white;
+  font-size: 20px;
+  background-color: $pop-green;
+  top: 180px;
+  left: -10px;
+  width: 250.5px;
+  height: 50px;
+}
+
+.index-image-text:before {
+  height: 0;
+  width: 0;
+  top: -8.5px;
+  left: 0.1px;
+  border-bottom: 9px solid black;
+  border-left: 9px solid transparent;
+}
+
+.index-image-text:before, .index-image-text:after {
+  content: "";
+  position: absolute;
+}
+
+.index-image-text:after {
+  height: 0;
+  width: 0;
+  right: -14.5px;
+  border-top: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  border-left: 15px solid $white;
+}
