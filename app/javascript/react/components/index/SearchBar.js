@@ -14,7 +14,7 @@ const SearchBar = (props) => {
         onChange={props.handleChange}
         >
       </input>
-      <div className="review-button-group">
+      <div className="search-button-group">
         <input className="button" type="submit" value="Search" />
       </div>
     </form>

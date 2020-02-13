@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem "active_model_serializers"
 
-gem "geocoder"
+gem "faraday"
 
 group :development, :test do
 
