@@ -68,7 +68,7 @@ const ReviewFormContainer = props => {
         handleChange={handleFieldChange}
       />
 
-    <label>Course Review</label>
+      <label>Course Review</label>
       <TextField
         type="text"
         fieldName="body"
@@ -77,7 +77,7 @@ const ReviewFormContainer = props => {
         handleChange={handleFieldChange}
       />
 
-    <div className="review-button-group">
+      <div className="review-button-group">
         <input className="button" type="submit" value="Submit" />
         <input className="button" type="button" value="Clear Form" onClick={clearForm} />
       </div>
