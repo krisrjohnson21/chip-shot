@@ -11,7 +11,6 @@ const ReviewTile = (props) => {
         <strong>Rating: </strong>{props.rating} |
           <strong> Review: </strong>{props.body}
       </h4>
-      <br />
     </div>
   );
 };

@@ -59,6 +59,7 @@ const CourseShowContainer = (props) => {
   const reviewList = reviews.map(review => {
     return (
       <>
+        <hr />
         <ReviewTile
           key={review.id}
           id={review.id}
@@ -66,7 +67,6 @@ const CourseShowContainer = (props) => {
           rating={review.rating}
           body={review.body}
         />
-        <hr />
       </>
     );
   });
@@ -87,7 +87,6 @@ const CourseShowContainer = (props) => {
               <ReviewFormContainer
                 addNewReview={addNewReview}
                 reviews={course.reviews}
-                key={course.reviews.id}
                 />
               <hr />
               <h2>
