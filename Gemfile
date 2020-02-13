@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem "active_model_serializers"
 
+gem "geocoder"
+
 group :development, :test do
 
 end

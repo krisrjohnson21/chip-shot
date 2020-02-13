@@ -13,7 +13,9 @@ class CourseSerializer < ActiveModel::Serializer
     :carts,
     :rentals,
     :lessons,
-    :url
+    :url,
+    :latitude,
+    :longitude
   )
 
   has_many :reviews

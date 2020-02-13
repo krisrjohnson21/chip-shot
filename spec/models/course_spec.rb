@@ -36,4 +36,10 @@ describe Course do
 
   it { should have_valid(:lessons).when("Yes", "No") }
   it { should_not have_valid(:lessons).when(nil, "") }
+
+  it { should have_valid(:latitude).when(42.3601) }
+  it { should_not have_valid(:latitude).when(nil) }
+
+  it { should have_valid(:longitude).when(71.0589) }
+  it { should_not have_valid(:longitude).when(nil) }  
 end
