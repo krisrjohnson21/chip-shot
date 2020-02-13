@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import CourseTile from './CourseTile'
+import SearchBar from './SearchBar'
 
 const CoursesIndexContainer = (props) => {
   const [courses, setCourses] = useState([])
@@ -37,8 +38,13 @@ const CoursesIndexContainer = (props) => {
   })
 
   return (
-    <div className="grid-container">
-      <div>{courseTiles}</div>
+    <div>
+      <div className="text-center search">
+        <SearchBar />
+      </div>
+      <div className="grid-container">
+        <div>{courseTiles}</div>
+      </div>
     </div>
   )
 }

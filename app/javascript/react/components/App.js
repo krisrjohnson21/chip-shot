@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom"
 
 import CoursesIndexContainer from "./index/CoursesIndexContainer"
 import CourseShowContainer from "./show/CourseShowContainer"
-export const App = (props) => {
+
+const App = (props) => {
   return (
     <BrowserRouter>
       <Switch>

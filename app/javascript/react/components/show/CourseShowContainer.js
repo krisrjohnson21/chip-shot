@@ -87,6 +87,7 @@ const CourseShowContainer = (props) => {
               <ReviewFormContainer
                 addNewReview={addNewReview}
                 reviews={course.reviews}
+                key={course.reviews.id}
                 />
               <hr />
               <h2>
