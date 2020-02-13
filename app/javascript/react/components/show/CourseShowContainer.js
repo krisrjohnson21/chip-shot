@@ -93,7 +93,6 @@ const CourseShowContainer = (props) => {
                 <strong>Reviews of {course.name}</strong>
               </h2>
               <div>{reviewList}</div>
-              <hr />
             </div>
           </div>
         </div>
