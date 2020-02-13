@@ -84,7 +84,6 @@ const CourseShowContainer = (props) => {
               <h2>
                 <strong>Add New Review</strong>
               </h2>
-              <div>{reviewList}</div>
               <ReviewFormContainer
                 addNewReview={addNewReview}
                 reviews={course.reviews}
@@ -93,6 +92,7 @@ const CourseShowContainer = (props) => {
               <h2>
                 <strong>Reviews of {course.name}</strong>
               </h2>
+              <div>{reviewList}</div>
               <hr />
             </div>
           </div>
