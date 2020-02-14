@@ -8,6 +8,13 @@ body {
   background-color: $background
 }
 
+i {
+  width: 50px;
+  height: 50px;
+  color: $white;
+  margin-right: -10px;
+}
+
 .flash {
   margin-top: 20px;
   font-size: 24px;
