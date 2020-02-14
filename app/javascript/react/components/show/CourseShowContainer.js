@@ -77,11 +77,11 @@ const CourseShowContainer = (props) => {
 
   const forecastList = forecast.map(day => {
     let classy = "fas fa-3x fa-"
-    if (day.includes("cloudy") || day.includes("overcast")) {
+    if (day.includes("cloudy") || day.includes("cast")) {
       classy += "cloud"
-    } else if (day.includes("snow")) {
+    } else if (day.includes("snow")|| day.includes("cast")) {
       classy += "snowflake"
-    } else if (day.includes("rain") || day.includes("shower")) {
+    } else if (day.includes("rain") || day.includes("shower") || day.includes("Rain") || day.includes("Shower")) {
       classy += "cloud-showers-heavy"
     } else {
       classy += "sun"
