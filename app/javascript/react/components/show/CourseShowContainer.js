@@ -54,6 +54,7 @@ const CourseShowContainer = (props) => {
         return response.json();
       })
       .then(newReviewBody => {
+        debugger
         setReviews([...reviews, newReviewBody.review]);
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -88,8 +89,9 @@ const CourseShowContainer = (props) => {
     }
 
     return (
-      <span className="forecast-span" key={day.id}>
+      <span className="forecast-span">
         <ForecastTile
+          key={day.id}
           day={day}
           classy={classy}
         />
