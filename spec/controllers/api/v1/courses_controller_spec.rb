@@ -26,6 +26,8 @@ RSpec.describe Api::V1::CoursesController, type: :controller do
     rentals: "Yes",
     lessons: "Yes",
     url: "https://www.stonegategolfclub.com/wp-content/uploads/sites/7256/2018/12/home_pic.jpg",
+    latitude: 42.3601,
+    longitude: 71.0589
   ) }
 
   let!(:second_course) { Course.create(
@@ -42,6 +44,8 @@ RSpec.describe Api::V1::CoursesController, type: :controller do
     rentals: "Yes",
     lessons: "Yes",
     url: "https://www.allentowngolf.org/images/template/showcase3.jpg",
+    latitude: 42.2529,
+    longitude: 71.0023
   ) }
 
   describe "GET#index" do
@@ -53,8 +57,8 @@ RSpec.describe Api::V1::CoursesController, type: :controller do
 
       expect(returned_json["courses"].length).to be 2
 
-      expect(returned_json["courses"][0].length).to be 16
-      expect(returned_json["courses"][1].length).to be 16
+      expect(returned_json["courses"][0].length).to be 18
+      expect(returned_json["courses"][1].length).to be 18
 
       expect(returned_json["courses"][0]["name"]).to eq "Boston Golf Course"
       expect(returned_json["courses"][0]["membership"]).to eq "Public"
@@ -69,6 +73,8 @@ RSpec.describe Api::V1::CoursesController, type: :controller do
       expect(returned_json["courses"][0]["rentals"]).to eq "Yes"
       expect(returned_json["courses"][0]["lessons"]).to eq "Yes"
       expect(returned_json["courses"][0]["url"]).to eq "https://www.stonegategolfclub.com/wp-content/uploads/sites/7256/2018/12/home_pic.jpg"
+      expect(returned_json["courses"][0]["latitude"]).to eq 42.3601
+      expect(returned_json["courses"][0]["longitude"]).to eq 71.0589
 
       expect(returned_json["courses"][1]["name"]).to eq "Quincy Golf Course"
       expect(returned_json["courses"][1]["membership"]).to eq "Private"
@@ -83,11 +89,13 @@ RSpec.describe Api::V1::CoursesController, type: :controller do
       expect(returned_json["courses"][1]["rentals"]).to eq "Yes"
       expect(returned_json["courses"][1]["lessons"]).to eq "Yes"
       expect(returned_json["courses"][1]["url"]).to eq "https://www.allentowngolf.org/images/template/showcase3.jpg"
+      expect(returned_json["courses"][1]["latitude"]).to eq 42.2529
+      expect(returned_json["courses"][1]["longitude"]).to eq 71.0023
     end
   end
 
   describe "GET#show" do
-    it "should return the cape and their attributes" do
+    it "should return the course and their attributes" do
       sign_in first_user
 
       get :show, params: {id: first_course.id}
@@ -109,6 +117,8 @@ RSpec.describe Api::V1::CoursesController, type: :controller do
       expect(returned_json["course"]["rentals"]).to eq "Yes"
       expect(returned_json["course"]["lessons"]).to eq "Yes"
       expect(returned_json["course"]["url"]).to eq "https://www.stonegategolfclub.com/wp-content/uploads/sites/7256/2018/12/home_pic.jpg"
+      expect(returned_json["course"]["latitude"]).to eq 42.3601
+      expect(returned_json["course"]["longitude"]).to eq 71.0589
     end
   end
 end

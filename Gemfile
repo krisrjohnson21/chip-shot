@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem "active_model_serializers"
 
+gem "faraday"
+
 group :development, :test do
 
 end

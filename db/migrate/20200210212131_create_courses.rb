@@ -14,6 +14,8 @@ class CreateCourses < ActiveRecord::Migration[5.2]
       t.string :rentals, null: false
       t.string :lessons, null: false
       t.string :url
+      t.float :latitude, null: false
+      t.float :longitude, null: false
 
       t.timestamps null: false
     end

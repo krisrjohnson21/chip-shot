@@ -19,7 +19,9 @@ c1 = Course.create(
   carts: "Yes",
   rentals: "Yes",
   lessons: "Yes",
-  url: "https://img.bizbash.com/files/base/bizbash/bzb/image/2019/02/7efb30d7943e16bd5a4dd77449de57fc.png?ar=16%3A9&auto=format&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&w=1140"
+  url: "https://img.bizbash.com/files/base/bizbash/bzb/image/2019/02/7efb30d7943e16bd5a4dd77449de57fc.png?ar=16%3A9&auto=format&crop=focalpoint&fit=crop&fp-x=0.5&fp-y=0.5&w=1140",
+  latitude: 33.6042,
+  longitude: 111.7257
 )
 
 c2 = Course.create(
@@ -35,7 +37,9 @@ c2 = Course.create(
   carts: "Yes",
   rentals: "Yes",
   lessons: "Yes",
-  url: "https://static.wixstatic.com/media/46c90c_2d1b23169dfe4c1a82919eb76cfbdbb1~mv2_d_2048_1365_s_2.jpeg"
+  url: "https://static.wixstatic.com/media/46c90c_2d1b23169dfe4c1a82919eb76cfbdbb1~mv2_d_2048_1365_s_2.jpeg",
+  latitude: 33.4152,
+  longitude: 111.8315
 )
 
 c3 = Course.create(
@@ -51,7 +55,9 @@ c3 = Course.create(
   carts: "Yes",
   rentals: "Yes",
   lessons: "Yes",
-  url: "https://www.quailridgecc.com/images/dynamic/getImage.gif?ID=100003662"
+  url: "https://www.quailridgecc.com/images/dynamic/getImage.gif?ID=100003662",
+  latitude: 26.5318,
+  longitude: 80.0905
 )
 
 c4 = Course.create(
@@ -67,7 +73,9 @@ c4 = Course.create(
   carts: "Yes",
   rentals: "Yes",
   lessons: "Yes",
-  url: "https://golfadvisor.brightspotcdn.com/dims4/default/0d6fdde/2147483647/strip/true/crop/450x290+0+24/resize/930x600!/quality/90/?url=https%3A%2F%2Fgolfadvisor.brightspotcdn.com%2F19%2Fce%2Fb3ddb4af9acd1960d4ef89c3d81b%2F61858.jpg"
+  url: "https://golfadvisor.brightspotcdn.com/dims4/default/0d6fdde/2147483647/strip/true/crop/450x290+0+24/resize/930x600!/quality/90/?url=https%3A%2F%2Fgolfadvisor.brightspotcdn.com%2F19%2Fce%2Fb3ddb4af9acd1960d4ef89c3d81b%2F61858.jpg",
+  latitude: 42.4975,
+  longitude: 94.1680
 )
 
 c5 = Course.create(
@@ -83,5 +91,100 @@ c5 = Course.create(
   carts: "Yes",
   rentals: "Yes",
   lessons: "Yes",
-  url: "https://mthoodgolfclub.com/wp-content/uploads/2018/05/MtHood-Course-16.jpg"
+  url: "https://mthoodgolfclub.com/wp-content/uploads/2018/05/MtHood-Course-16.jpg",
+  latitude: 42.4584,
+  longitude: 71.0662
+)
+
+u1 = User.create(
+  first: "Bill",
+  last: "Keegan",
+  email: "bill@aol.com",
+  password: "password1",
+  city: "Orlando",
+  state: "Florida",
+  handicap: 30,
+  bio: "Mostly play to make new friends"
+)
+
+u2 = User.create(
+  first: "Steve",
+  last: "Jones",
+  email: "steve@aol.com",
+  password: "password2",
+  city: "Boston",
+  state: "Massachusetts",
+  handicap: 20,
+  bio: "Playing since I was ten years old"
+)
+
+u3 = User.create(
+  first: "John",
+  last: "Davis",
+  email: "john@aol.com",
+  password: "password3",
+  city: "San Diego",
+  state: "California",
+  handicap: 15,
+  bio: "Played on my college team"
+)
+
+u4 = User.create(
+  first: "Liz",
+  last: "Willis",
+  email: "liz@aol.com",
+  password: "password3",
+  city: "Milwaukee",
+  state: "Wisconsin",
+  handicap: 20,
+  bio: "Learned from my parents when I was young"
+)
+
+r1 = Review.create(
+  user: u1,
+  course: c3,
+  rating: 3,
+  body: "This is a nice course"
+)
+
+r2 = Review.create(
+  user: u2,
+  course: c5,
+  rating: 4,
+  body: "Good league on Wednesday nights"
+)
+
+r3 = Review.create(
+  user: u2,
+  course: c1,
+  rating: 4,
+  body: "A nice warm winter round"
+)
+
+r4 = Review.create(
+  user: u3,
+  course: c1,
+  rating: 3,
+  body: "Decent, but gets a little dried out"
+)
+
+r5 = Review.create(
+  user: u3,
+  course: c4,
+  rating: 3,
+  body: "Very friendly clubhouse staff"
+)
+
+r6 = Review.create(
+  user: u1,
+  course: c2,
+  rating: 2,
+  body: "Greens were faster than a racecar"
+)
+
+r6 = Review.create(
+  user: u1,
+  course: c5,
+  rating: 5,
+  body: "Gem of a summer course"
 )

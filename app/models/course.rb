@@ -21,6 +21,8 @@ class Course < ApplicationRecord
     message: "Please enter either yes or no" }
   validates :lessons, presence: true, inclusion: { in: %w(Yes No),
     message: "Please enter either yes or no" }
+  validates :latitude, presence: true
+  validates :longitude, presence: true
 
   def number_of_holes
     if holes != 9 && holes != 18 && holes != 27 && holes != 36
