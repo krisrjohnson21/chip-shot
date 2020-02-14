@@ -77,7 +77,6 @@ const CourseShowContainer = (props) => {
 
   const forecastList = forecast.map(day => {
     let classy = "fas fa-3x fa-"
-
     if (day.includes("cloudy") || day.includes("overcast")) {
       classy += "cloud"
     } else if (day.includes("snow")) {

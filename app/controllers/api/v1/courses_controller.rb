@@ -10,19 +10,16 @@ class Api::V1::CoursesController < ApiController
     longitude = course.longitude
     reviews = course.reviews
 
-    if Rails.env.production? || Rails.env.development?
-      base_url = "https://api.darksky.net/forecast/#{ENV["DARK_SKY_API_KEY"]}/#{latitude},#{longitude}?exclude=currently,hourly"
-      response = Faraday.get("#{base_url}")
-      parsed_response = JSON.parse(response.body)
-      forecast = []
-      parsed_response["daily"]["data"].each do |day|
-        forecast << day["summary"]
-        3.times { forecast.pop }
-      end
-    else
-      forecast = ["Windy", "Gusty", "Sunny", "Snowy", "Rainy"]
+    base_url = "https://api.darksky.net/forecast/#{ENV["DARK_SKY_API_KEY"]}/#{latitude},#{longitude}?exclude=currently,hourly"
+    response = Faraday.get("#{base_url}")
+    parsed_response = JSON.parse(response.body)
+
+    forecast = []
+    parsed_response["daily"]["data"].each do |day|
+      forecast << day["summary"]
     end
 
+    3.times { forecast.pop }
 
     course_data = {
       course: course,
