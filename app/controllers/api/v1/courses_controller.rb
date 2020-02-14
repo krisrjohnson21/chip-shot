@@ -6,13 +6,28 @@ class Api::V1::CoursesController < ApiController
 
   def show
     course = Course.find(params["id"])
-    render json: course, serializer: CourseSerializer
     latitude = course.latitude
     longitude = course.longitude
+    reviews = course.reviews
 
     base_url = "https://api.darksky.net/forecast/#{ENV["DARK_SKY_API_KEY"]}/#{latitude},#{longitude}?exclude=currently,hourly"
     response = Faraday.get("#{base_url}")
     parsed_response = JSON.parse(response.body)
+
+    forecast = []
+    parsed_response["daily"]["data"].each do |day|
+      forecast << day["summary"]
+    end
+
+    3.times { forecast.pop }
+
+    course_data = {
+      course: course,
+      reviews: reviews,
+      forecast: forecast
+    }
+
+    render json: course_data
   end
 
   def search
