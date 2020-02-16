@@ -8,7 +8,7 @@ to their profile. Data visualization allows users to track progress, and a revie
 system allows them to choose new courses in an informed way.
 
 Heroku Link
-TKTKTK
+https://chip-shot.herokuapp.com/
 
 # Technologies
 -Ruby - 2.6.3

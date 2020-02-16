@@ -8,7 +8,6 @@ class Api::V1::CoursesController < ApiController
     course = Course.find(params["id"])
     latitude = course.latitude
     longitude = course.longitude
-    reviews = course.reviews
     forecast = []
 
     if Rails.env.production? || Rails.env.development?
@@ -25,8 +24,7 @@ class Api::V1::CoursesController < ApiController
     3.times { forecast.pop }
 
     course_data = {
-      course: course,
-      reviews: reviews,
+      course: ActiveModelSerializers::SerializableResource.new(course, each_serializer: CourseSerializer),
       forecast: forecast
     }
 

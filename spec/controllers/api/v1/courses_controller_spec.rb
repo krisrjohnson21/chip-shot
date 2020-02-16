@@ -104,21 +104,21 @@ RSpec.describe Api::V1::CoursesController, type: :controller do
       expect(response.status).to eq 200
       expect(response.content_type).to eq("application/json")
 
-      expect(returned_json["course"]["name"]).to eq "Boston Golf Course"
-      expect(returned_json["course"]["membership"]).to eq "Public"
-      expect(returned_json["course"]["holes"]).to eq 9
-      expect(returned_json["course"]["par"]).to eq 36
-      expect(returned_json["course"]["address"]).to eq "100 Main Street"
-      expect(returned_json["course"]["city"]).to eq "Boston"
-      expect(returned_json["course"]["state"]).to eq "Massachusetts"
-      expect(returned_json["course"]["website"]).to eq "www.golf.com"
-      expect(returned_json["course"]["range"]).to eq "Yes"
-      expect(returned_json["course"]["carts"]).to eq "Yes"
-      expect(returned_json["course"]["rentals"]).to eq "Yes"
-      expect(returned_json["course"]["lessons"]).to eq "Yes"
-      expect(returned_json["course"]["url"]).to eq "https://www.stonegategolfclub.com/wp-content/uploads/sites/7256/2018/12/home_pic.jpg"
-      expect(returned_json["course"]["latitude"]).to eq 42.3601
-      expect(returned_json["course"]["longitude"]).to eq 71.0589
+      expect(returned_json["course"]["course"]["name"]).to eq "Boston Golf Course"
+      expect(returned_json["course"]["course"]["membership"]).to eq "Public"
+      expect(returned_json["course"]["course"]["holes"]).to eq 9
+      expect(returned_json["course"]["course"]["par"]).to eq 36
+      expect(returned_json["course"]["course"]["address"]).to eq "100 Main Street"
+      expect(returned_json["course"]["course"]["city"]).to eq "Boston"
+      expect(returned_json["course"]["course"]["state"]).to eq "Massachusetts"
+      expect(returned_json["course"]["course"]["website"]).to eq "www.golf.com"
+      expect(returned_json["course"]["course"]["range"]).to eq "Yes"
+      expect(returned_json["course"]["course"]["carts"]).to eq "Yes"
+      expect(returned_json["course"]["course"]["rentals"]).to eq "Yes"
+      expect(returned_json["course"]["course"]["lessons"]).to eq "Yes"
+      expect(returned_json["course"]["course"]["url"]).to eq "https://www.stonegategolfclub.com/wp-content/uploads/sites/7256/2018/12/home_pic.jpg"
+      expect(returned_json["course"]["course"]["latitude"]).to eq 42.3601
+      expect(returned_json["course"]["course"]["longitude"]).to eq 71.0589
     end
   end
 end

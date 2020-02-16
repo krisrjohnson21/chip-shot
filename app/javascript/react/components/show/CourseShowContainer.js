@@ -10,6 +10,10 @@ const CourseShowContainer = (props) => {
   const [reviews, setReviews] = useState([]);
   const [forecast, setForecast] = useState([]);
   const courseId = props.match.params.id;
+  let today = new Date()
+  let dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+  let date = today.getDay()
+  let dayName = dayList[date];
 
   useEffect(() => {
     fetch(`/api/v1/courses/${courseId}`)
@@ -24,8 +28,8 @@ const CourseShowContainer = (props) => {
     })
     .then(response => response.json())
     .then(response => {
-      setCourse(response.course)
-      setReviews(response.reviews)
+      setCourse(response.course.course)
+      setReviews(response.course.course.reviews)
       setForecast(response.forecast)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
@@ -62,7 +66,6 @@ const CourseShowContainer = (props) => {
   const reviewList = reviews.map(review => {
     return (
       <div key={review.id}>
-        <hr />
         <ReviewTile
           key={review.id}
           id={review.id}
@@ -70,27 +73,34 @@ const CourseShowContainer = (props) => {
           rating={review.rating}
           body={review.body}
         />
+        <hr />
       </div>
     );
   });
 
-
   const forecastList = forecast.map(day => {
+    let newDayName = dayList[date]
+    date++
+
     let classy = "fas fa-3x fa-"
     if (day.includes("cloudy") || day.includes("cast")) {
       classy += "cloud"
     } else if (day.includes("snow")|| day.includes("cast")) {
       classy += "snowflake"
-    } else if (day.includes("rain") || day.includes("shower") || day.includes("Rain") || day.includes("Shower")) {
+    } else if (day.includes("fog")|| day.includes("Fog")) {
+      classy += "smog"
+    } else if (day.includes("rain") || day.includes("shower") || day.includes("drizzle") || day.includes("Rain") || day.includes("Shower")) {
       classy += "cloud-showers-heavy"
     } else {
       classy += "sun"
     }
 
     return (
-      <span className="forecast-span" key={day.id}>
+      <span className="forecast-span">
         <ForecastTile
+          key={day.id}
           day={day}
+          date={newDayName}
           classy={classy}
         />
     </span>
@@ -119,13 +129,20 @@ const CourseShowContainer = (props) => {
                 <h2>
                   <strong>Reviews of {course.name}</strong>
                 </h2>
+                <br />
                 <div>{reviewList}</div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="cell small-12 text-center">{forecastList}</div>
+      <hr />
+      <div className="cell small-12 text-center">
+        <h2>
+          <strong>Five Day Forecast for {course.name}</strong>
+        </h2>
+        {forecastList}
+      </div>
     </>
   )
 }
