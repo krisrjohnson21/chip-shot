@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-import CourseShow from './CourseShow';
-import ReviewTile from '../review/ReviewTile'
-import ReviewFormContainer from '../review/ReviewFormContainer'
-import ForecastTile from './ForecastTile'
+import CourseShow from "./CourseShow";
+import ReviewTile from "../review/ReviewTile"
+import ReviewFormContainer from "../review/ReviewFormContainer"
+import ForecastTile from "./ForecastTile"
 
 const CourseShowContainer = (props) => {
   const [course, setCourse] = useState({});
@@ -124,7 +124,7 @@ const CourseShowContainer = (props) => {
                 <ReviewFormContainer
                   addNewReview={addNewReview}
                   reviews={course.reviews}
-                  />
+                />
                 <hr />
                 <h2>
                   <strong>Reviews of {course.name}</strong>
