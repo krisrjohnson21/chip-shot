@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get "/courses", to: "static_pages#index"
   get "/courses/:id", to: "static_pages#index"
   get "/courses/:id/reviews", to: "static_pages#index"
-  get "/profile", to: "static_pages#index"
+  get "/users/:id/profile", to: "static_pages#index"
 
   namespace "api" do
     namespace "v1" do

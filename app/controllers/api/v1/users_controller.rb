@@ -1,9 +1,9 @@
 class Api::V1::UsersController < ApiController
 
   def show
-    user_data = current_user
+    user = User.find(params["id"])
     rounds = user.rounds
 
-    render json: user_data
+    render json: user
   end
 end
