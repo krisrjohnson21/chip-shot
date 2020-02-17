@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   has_many :reviews
   has_many :rounds
-  has_many :courses, through: :rounds
+  has_many :courses, through: :reviews
 
   validates :first, presence: true
   validates :last, presence: true

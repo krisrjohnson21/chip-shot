@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe Course do
   it { should have_many :reviews }
-  it { should have_many :rounds }
   it { should have_many :users }
 
   it { should have_valid(:name).when("Mt Hood") }
@@ -41,5 +40,5 @@ describe Course do
   it { should_not have_valid(:latitude).when(nil) }
 
   it { should have_valid(:longitude).when(71.0589) }
-  it { should_not have_valid(:longitude).when(nil) }  
+  it { should_not have_valid(:longitude).when(nil) }
 end
