@@ -32,7 +32,7 @@ const CoursesIndexContainer = (props) => {
   const courseTiles = courses.map(course => {
     let id = course.id;
     return (
-      <div className="row index-div">
+      <div className="row index-div" key={course.id}>
         <div className="columns small-4">
           <Link to={`/courses/${id}`}>
             <CourseTile key={course.id} id={course.id} course={course} />
