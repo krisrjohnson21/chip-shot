@@ -7,15 +7,15 @@ users do both by allowing users to find courses, create profiles, and add rounds
 to their profile. Data visualization allows users to track progress, and a review
 system allows them to choose new courses in an informed way.
 
-Heroku Link
+Heroku Link<br />
 https://chip-shot.herokuapp.com/
 
 # Technologies
--Ruby - 2.6.3
--Rails - 5.2.3
--React - 16.8.0
--CarrierWave - 2.0.2
--Foundation-Rails - 6.5
+-Ruby 2.6.3<br />
+-Rails 5.2.3<br />
+-React 16.8.0<br />
+-CarrierWave 2.0.2<br />
+-Foundation-Rails 6.5
 
 # Setup
 
@@ -26,8 +26,9 @@ To set up this app, download the repo and run the following commands in your ter
 -bundle exec rake db:create<br />
 -bundle exec rake db:migrate && bundle exec rake db:rollback && bundle exec rake db:migrate<br />
 -bundle exec rake db:seed<br />
--yarn start<br />
--new tab- bundle exec rails s<br />
+-yarn run start<br />
+-new tab<br />
+-bundle exec rails s<br />
 -Navigate your browser to localhost:3000
 
 # Testing
