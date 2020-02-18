@@ -1,7 +1,6 @@
 class Course < ApplicationRecord
   has_many :reviews
-  has_many :rounds
-  has_many :users, through: :rounds
+  has_many :users, through: :reviews
 
   validates :name, presence: true
   validates :membership, presence: true

@@ -19,5 +19,4 @@ class CourseSerializer < ActiveModel::Serializer
   )
 
   has_many :reviews
-  has_many :rounds
 end

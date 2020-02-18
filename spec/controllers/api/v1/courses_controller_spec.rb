@@ -57,8 +57,8 @@ RSpec.describe Api::V1::CoursesController, type: :controller do
 
       expect(returned_json["courses"].length).to be 2
 
-      expect(returned_json["courses"][0].length).to be 18
-      expect(returned_json["courses"][1].length).to be 18
+      expect(returned_json["courses"][0].length).to be 17
+      expect(returned_json["courses"][1].length).to be 17
 
       expect(returned_json["courses"][0]["name"]).to eq "Boston Golf Course"
       expect(returned_json["courses"][0]["membership"]).to eq "Public"
