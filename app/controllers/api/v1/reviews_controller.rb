@@ -24,6 +24,13 @@ class Api::V1::ReviewsController < ApiController
     end
   end
 
+  def destroy
+    course = Course.find(params["course_id"])
+    review = Review.find(params["id"])
+    review.destroy
+    render json: reviews
+  end
+
   protected
   def review_params
     params.permit("rating", "body")
