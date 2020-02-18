@@ -33,7 +33,7 @@ const CourseShowContainer = (props) => {
       setForecast(response.forecast)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
-  }, [])
+  }, [reviews])
 
   const addNewReview = formPayload => {
     fetch(`/api/v1/courses/${courseId}/reviews/`, {
