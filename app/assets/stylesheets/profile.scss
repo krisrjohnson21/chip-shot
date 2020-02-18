@@ -9,7 +9,8 @@ $white: #FFFFFF;
 }
 
 .profile-details {
-  padding-left: 180px;
+  padding-left: 120px;
+  margin-right: 10px;
 }
 
 li {
@@ -27,6 +28,30 @@ li {
   margin: 0px 5px 0px 5px;
   border-radius: 10px;
   box-shadow: inset 0 0 3px black;
+}
+
+.profile-tile {
+  display: inline-grid;
+  align-items: center;
+  border: 1px solid $dark-green;
+  border-radius: 10px;
+  padding: 10px 10px 10px 20px;
+  height: 320px;
+  width: 400px;
+  margin: 30px 20px;
+  box-shadow: inset 0 0 10px $dark-green;
+}
+
+.form-tile {
+  display: inline-grid;
+  align-items: center;
+  border: 1px solid $dark-green;
+  border-radius: 10px;
+  padding: 10px;
+  height: 400px;
+  width: 320px;
+  margin: 30px 20px;
+  box-shadow: inset 0 0 10px $dark-green;
 }
 
 .round-tile {

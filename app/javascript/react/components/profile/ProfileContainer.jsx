@@ -93,19 +93,23 @@ const ProfileContainer = (props) => {
     <div className="body-profile">
       <div className="grid-x profile-details">
         <div className="cell small-6">
-          <h2>
-            <strong>User Details</strong>
-          </h2>
-          <h4><strong>Name: </strong>{profile.first} {profile.last}</h4>
-          <h4><strong>Location: </strong>{profile.city}, {profile.state}</h4>
-          <h4><strong>Handicap: </strong>{profile.handicap}</h4>
-          <h4><strong>About Me: </strong>{profile.bio}</h4>
+          <div className="profile-tile">
+            <h2>
+              <strong>User Details</strong>
+            </h2>
+            <h4><strong>Name: </strong>{profile.first} {profile.last}</h4>
+            <h4><strong>Location: </strong>{profile.city}, {profile.state}</h4>
+            <h4><strong>Handicap: </strong>{profile.handicap}</h4>
+            <h4><strong>About Me: </strong>{profile.bio}</h4>
+          </div>
         </div>
         <div className="cell small-6">
-          <h2>
-            <strong>Courses You've Played</strong>
-          </h2>
-          {coursesPlayedList}
+          <div className="profile-tile">
+            <h2>
+              <strong>Courses You've Played</strong>
+            </h2>
+            {coursesPlayedList}
+          </div>
         </div>
       </div>
       <hr />
@@ -115,13 +119,15 @@ const ProfileContainer = (props) => {
         </h2>
         {roundList}
         <hr />
-        <h2>
-          <strong>Add New Round</strong>
-        </h2>
-        <RoundFormContainer
-          addNewRound={addNewRound}
-          rounds={profile.rounds}
-          />
+        <div className="form-tile">
+          <h2>
+            <strong>Add New Round</strong>
+          </h2>
+          <RoundFormContainer
+            addNewRound={addNewRound}
+            rounds={profile.rounds}
+            />
+        </div>
       </div>
     </div>
   )
