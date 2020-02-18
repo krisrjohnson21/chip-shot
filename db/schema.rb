@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_212131) do
     t.integer "birdies", null: false
     t.integer "pars", null: false
     t.string "date", null: false
+    t.string "course", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

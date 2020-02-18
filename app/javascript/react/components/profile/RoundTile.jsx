@@ -9,6 +9,11 @@ const RoundTile = (props) => {
         </h4>
       </div>
       <div className="round-text">
+        <h4 id="course">
+          <strong>Course: </strong>{props.round.course}
+        </h4>
+      </div>
+      <div className="round-text">
         <h4 id="score">
           <strong>Round Score: </strong>{props.round.score}
         </h4>

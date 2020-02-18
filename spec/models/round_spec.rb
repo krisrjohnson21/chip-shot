@@ -14,4 +14,7 @@ describe Round do
 
   it { should have_valid(:date).when("10/10/2019") }
   it { should_not have_valid(:date).when(nil, "") }
+
+  it { should have_valid(:course).when("Mt Hood Municipal Golf Course") }
+  it { should_not have_valid(:course).when(nil, "") }
 end

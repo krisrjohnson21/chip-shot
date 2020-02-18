@@ -183,7 +183,7 @@ r6 = Review.create(
 )
 
 r6 = Review.create(
-  user: u1,
+  user: u4,
   course: c5,
   rating: 5,
   body: "Gem of a summer course"
@@ -194,7 +194,8 @@ o1 = Round.create(
   score: 80,
   birdies: 1,
   pars: 2,
-  date: "06/04/2019"
+  date: "06/04/2019",
+  course: "Mt Hood Municipal Golf Course"
 )
 
 o2 = Round.create(
@@ -202,7 +203,8 @@ o2 = Round.create(
   score: 83,
   birdies: 0,
   pars: 2,
-  date: "06/11/2019"
+  date: "06/11/2019",
+  course: "Painted Mountain Golf Resort"
 )
 
 o3 = Round.create(
@@ -210,7 +212,8 @@ o3 = Round.create(
   score: 78,
   birdies: 2,
   pars: 3,
-  date: "06/25/2019"
+  date: "06/25/2019",
+  course: "Quail Ridge Country Club"
 )
 
 o4 = Round.create(
@@ -218,7 +221,8 @@ o4 = Round.create(
   score: 88,
   birdies: 0,
   pars: 1,
-  date: "07/03/2019"
+  date: "07/03/2019",
+  course: "Mt Hood Municipal Golf Course"
 )
 
 o5 = Round.create(
@@ -226,7 +230,8 @@ o5 = Round.create(
   score: 73,
   birdies: 3,
   pars: 8,
-  date: "04/04/2019"
+  date: "04/04/2019",
+  course: "Mt Hood Municipal Golf Course"
 )
 
 o6 = Round.create(
@@ -234,7 +239,8 @@ o6 = Round.create(
   score: 78,
   birdies: 2,
   pars: 6,
-  date: "04/11/2019"
+  date: "04/11/2019",
+  course: "Mt Hood Municipal Golf Course"
 )
 
 o7 = Round.create(
@@ -242,7 +248,8 @@ o7 = Round.create(
   score: 70,
   birdies: 4,
   pars: 9,
-  date: "04/25/2019"
+  date: "04/25/2019",
+  course: "Desert Canyon Golf Club"
 )
 
 o8 = Round.create(
@@ -250,7 +257,8 @@ o8 = Round.create(
   score: 82,
   birdies: 1,
   pars: 6,
-  date: "05/03/2019"
+  date: "05/03/2019",
+  course: "Desert Canyon Golf Club"
 )
 
 o9 = Round.create(
@@ -258,7 +266,8 @@ o9 = Round.create(
   score: 93,
   birdies: 0,
   pars: 1,
-  date: "08/04/2019"
+  date: "08/04/2019",
+  course: "Desert Canyon Golf Club"
 )
 
 o10 = Round.create(
@@ -266,7 +275,8 @@ o10 = Round.create(
   score: 88,
   birdies: 0,
   pars: 3,
-  date: "08/11/2019"
+  date: "08/11/2019",
+  course: "Desert Canyon Golf Club"
 )
 
 o11 = Round.create(
@@ -274,7 +284,8 @@ o11 = Round.create(
   score: 86,
   birdies: 0,
   pars: 4,
-  date: "08/25/2019"
+  date: "08/25/2019",
+  course: "Fort Dodge Country Club"
 )
 
 o12 = Round.create(
@@ -282,7 +293,8 @@ o12 = Round.create(
   score: 82,
   birdies: 1,
   pars: 3,
-  date: "09/03/2019"
+  date: "09/03/2019",
+  course: "Fort Dodge Country Club"
 )
 
 o13 = Round.create(
@@ -290,7 +302,8 @@ o13 = Round.create(
   score: 88,
   birdies: 0,
   pars: 3,
-  date: "05/11/2019"
+  date: "05/11/2019",
+  course: "Mt Hood Municipal Golf Course"
 )
 
 o14 = Round.create(
@@ -298,5 +311,6 @@ o14 = Round.create(
   score: 86,
   birdies: 0,
   pars: 4,
-  date: "10/25/2019"
+  date: "10/25/2019",
+  course: "Mt Hood Municipal Golf Course"
 )

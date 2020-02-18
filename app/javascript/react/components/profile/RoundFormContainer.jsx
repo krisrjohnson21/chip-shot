@@ -68,6 +68,24 @@ const RoundFormContainer = (props) => {
         handleChange={handleFieldChange}
       />
 
+    <label>Course Name</label>
+      <TextField
+        type="text"
+        fieldName="course"
+        id="course"
+        content={newRound.course}
+        handleChange={handleFieldChange}
+      />
+
+      <label>Date You Played (dd/mm/yyyy)</label>
+      <TextField
+        type="text"
+        fieldName="date"
+        id="date"
+        content={newRound.date}
+        handleChange={handleFieldChange}
+      />
+
     <label>Number of Birdies</label>
       <TextField
         type="text"

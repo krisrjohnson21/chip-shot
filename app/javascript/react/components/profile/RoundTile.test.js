@@ -12,7 +12,8 @@ describe("Round", () => {
     score: 85,
     birdies: 0,
     pars: 2,
-    date: "8/1/2019"
+    date: "8/1/2019",
+    course: "Mt Hood Municipal Golf Course"
   }
 
   beforeEach(() => {
@@ -25,6 +26,10 @@ describe("Round", () => {
 
   it("should render an h4 tag with the date of the round", () => {
     expect(wrapper.find("#date").text()).toBe("Round Date: 8/1/2019");
+  });
+
+  it("should render an h4 tag with the name of the course played", () => {
+    expect(wrapper.find("#course").text()).toBe("Course: Mt Hood Municipal Golf Course");
   });
 
   it("should render an h4 tag with the score from the round", () => {
