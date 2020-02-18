@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 import RoundTile from "./RoundTile"
 import RoundFormContainer from "./RoundFormContainer"
@@ -9,6 +10,7 @@ const ProfileContainer = (props) => {
   const [reviewsLeft, setReviewsLeft] = useState([])
   const [rounds, setRounds] = useState([])
   const userId = props.match.params.id;
+  let lowScore = rounds.sort((a, b) => (a.score > b.score) ? 1 : (a.score === b.score) ? ((a.pars > b.pars) ? 1 : -1) : -1 )[0]
 
   useEffect(() => {
     fetch(`/api/v1/users/${userId}`)
@@ -32,21 +34,29 @@ const ProfileContainer = (props) => {
   }, [])
 
   const roundList = rounds.map(round => {
+    let classic = "fas fa-3x fa-"
+    if (round.score === lowScore.score) {
+      classic += "trophy"
+    }
+
     return (
-      <div key={round.id}>
+      <span key={round.id}>
         <RoundTile
           key={round.id}
           id={round.id}
           round={round}
+          classic={classic}
         />
-      </div>
+      </span>
     )
   })
 
   const coursesPlayedList = coursesPlayed.map(course => {
     return (
       <ul key={course.id}>
-        <li>{course.name}</li>
+        <Link to={`/courses/${course.id}`}>
+          <li>{course.name}</li>
+        </Link>
       </ul>
     )
   })
@@ -80,15 +90,30 @@ const ProfileContainer = (props) => {
   };
 
   return (
-    <>
-      <div>
+    <div className="body-profile">
+      <div className="grid-x profile-details">
+        <div className="cell small-6">
+          <h2>
+            <strong>User Details</strong>
+          </h2>
+          <h4><strong>Name: </strong>{profile.first} {profile.last}</h4>
+          <h4><strong>Location: </strong>{profile.city}, {profile.state}</h4>
+          <h4><strong>Handicap: </strong>{profile.handicap}</h4>
+          <h4><strong>About Me: </strong>{profile.bio}</h4>
+        </div>
+        <div className="cell small-6">
+          <h2>
+            <strong>Courses You've Played</strong>
+          </h2>
+          {coursesPlayedList}
+        </div>
+      </div>
+      <hr />
+      <div className="text-center">
         <h2>
-          <strong>User Details</strong>
-          <h4>Name: {profile.first} {profile.last}</h4>
-          <h4>Location: {profile.city}, {profile.state}</h4>
-          <h4>Handicap: {profile.handicap}</h4>
-          <h4>About Me: {profile.bio}</h4>
+          <strong>Rounds You've Saved</strong>
         </h2>
+        {roundList}
         <hr />
         <h2>
           <strong>Add New Round</strong>
@@ -96,23 +121,9 @@ const ProfileContainer = (props) => {
         <RoundFormContainer
           addNewRound={addNewRound}
           rounds={profile.rounds}
-        />
+          />
       </div>
-      <hr />
-      <div>
-        <h2>
-          <strong>Courses You've Played</strong>
-        </h2>
-        {coursesPlayedList}
-      </div>
-      <hr />
-      <div>
-        <h2>
-          <strong>Rounds You've Saved</strong>
-        </h2>
-        {roundList}
-      </div>
-    </>
+    </div>
   )
 }
 

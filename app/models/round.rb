@@ -1,4 +1,6 @@
 class Round < ApplicationRecord
+  default_scope { order(created_at: :desc)}
+
   belongs_to :user
 
   validates :score, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 30, less_than_or_equal_to: 200 }

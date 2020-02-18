@@ -54,8 +54,8 @@ const RoundFormContainer = (props) => {
   }
 
   return (
-    <form className="" onSubmit={handleSubmit}>
-      <div className="">
+    <form className="round-form" onSubmit={handleSubmit}>
+      <div>
         <h5>{props.signInError}</h5>
       </div>
       <ErrorList errors={errors} />

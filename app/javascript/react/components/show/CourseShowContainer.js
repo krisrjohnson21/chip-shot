@@ -103,7 +103,7 @@ const CourseShowContainer = (props) => {
           date={newDayName}
           classy={classy}
         />
-    </span>
+      </span>
     );
   });
 

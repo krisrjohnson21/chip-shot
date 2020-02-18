@@ -2,17 +2,26 @@ import React from "react";
 
 const RoundTile = (props) => {
   return (
-    <div id={props.id}>
-      <h4>
-        Round Score: {props.round.score}
-      </h4>
-      <h4>
-        Birdies: {props.round.birdies}
-      </h4>
-      <h4>
-        Pars: {props.round.pars}
-      </h4>
-    </div>
+    <span id={props.id} className="round-tile">
+      <div className="round-text">
+        <h4>
+          <strong>Round Score: </strong>{props.round.score}
+        </h4>
+      </div>
+      <div className="round-text">
+        <h4>
+          <strong>Birdies: </strong>{props.round.birdies}
+        </h4>
+      </div>
+      <div className="round-text">
+        <h4>
+          <strong>Pars: </strong>{props.round.pars}
+        </h4>
+        <span className="trophy">
+          <i id="trophy-icon" className={props.classic}></i>
+        </span>
+      </div>
+    </span>
   )
 }
 
