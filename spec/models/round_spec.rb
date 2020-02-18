@@ -11,4 +11,7 @@ describe Round do
 
   it { should have_valid(:pars).when(5) }
   it { should_not have_valid(:pars).when(nil, 20, -5) }
+
+  it { should have_valid(:date).when("10/10/2019") }
+  it { should_not have_valid(:date).when(nil, "") }
 end

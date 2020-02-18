@@ -11,7 +11,8 @@ describe("Round", () => {
   let round = {
     score: 85,
     birdies: 0,
-    pars: 2
+    pars: 2,
+    date: "8/1/2019"
   }
 
   beforeEach(() => {
@@ -20,6 +21,10 @@ describe("Round", () => {
         round={round}
       />
     );
+  });
+
+  it("should render an h4 tag with the date of the round", () => {
+    expect(wrapper.find("#date").text()).toBe("Round Date: 8/1/2019");
   });
 
   it("should render an h4 tag with the score from the round", () => {
