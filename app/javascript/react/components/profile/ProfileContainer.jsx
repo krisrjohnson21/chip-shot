@@ -83,6 +83,14 @@ const ProfileContainer = (props) => {
     <>
       <div>
         <h2>
+          <strong>User Details</strong>
+          <h4>Name: {profile.first} {profile.last}</h4>
+          <h4>Location: {profile.city}, {profile.state}</h4>
+          <h4>Handicap: {profile.handicap}</h4>
+          <h4>About Me: {profile.bio}</h4>
+        </h2>
+        <hr />
+        <h2>
           <strong>Add New Round</strong>
         </h2>
         <RoundFormContainer
@@ -90,12 +98,18 @@ const ProfileContainer = (props) => {
           rounds={profile.rounds}
         />
       </div>
+      <hr />
       <div>
-        <h2>Courses You've Played</h2>
+        <h2>
+          <strong>Courses You've Played</strong>
+        </h2>
         {coursesPlayedList}
       </div>
+      <hr />
       <div>
-        <h2>Rounds You've Tracked</h2>
+        <h2>
+          <strong>Rounds You've Saved</strong>
+        </h2>
         {roundList}
       </div>
     </>
