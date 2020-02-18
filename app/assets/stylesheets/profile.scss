@@ -13,6 +13,12 @@ $white: #FFFFFF;
   margin-right: 10px;
 }
 
+.profile-hr {
+  width: 90%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 li {
   font-size: 24px;
   margin-left: 10px;
@@ -31,12 +37,12 @@ li {
 }
 
 .profile-tile {
-  display: inline-grid;
+  display: inline-block;
   align-items: center;
   border: 1px solid $dark-green;
   border-radius: 10px;
   padding: 10px 10px 10px 20px;
-  height: 320px;
+  height: auto;
   width: 400px;
   margin: 30px 20px;
   box-shadow: inset 0 0 10px $dark-green;
@@ -48,7 +54,7 @@ li {
   border: 1px solid $dark-green;
   border-radius: 10px;
   padding: 10px;
-  height: 400px;
+  height: auto;
   width: 320px;
   margin: 30px 20px;
   box-shadow: inset 0 0 10px $dark-green;
@@ -60,8 +66,8 @@ li {
   border: 1px solid $dark-green;
   border-radius: 10px;
   padding: 10px;
-  height: 220px;
-  width: 200px;
+  height: 400px;
+  width: 250px;
   margin: 30px 20px;
   box-shadow: inset 0 0 10px $dark-green;
 }

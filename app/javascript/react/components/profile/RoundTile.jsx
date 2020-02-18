@@ -4,6 +4,16 @@ const RoundTile = (props) => {
   return (
     <span id={props.id} className="round-tile">
       <div className="round-text">
+        <h4 id="date">
+          <strong>Round Date: </strong>{props.round.date}
+        </h4>
+      </div>
+      <div className="round-text">
+        <h4 id="course">
+          <strong>Course: </strong>{props.round.course}
+        </h4>
+      </div>
+      <div className="round-text">
         <h4 id="score">
           <strong>Round Score: </strong>{props.round.score}
         </h4>

@@ -23,7 +23,7 @@ class Api::V1::RoundsController < ApiController
 
   protected
   def round_params
-    params.permit("score", "birdies", "pars")
+    params.permit("score", "birdies", "pars", "date", "course")
   end
 
 end

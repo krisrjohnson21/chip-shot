@@ -10,7 +10,8 @@ const ProfileContainer = (props) => {
   const [reviewsLeft, setReviewsLeft] = useState([])
   const [rounds, setRounds] = useState([])
   const userId = props.match.params.id;
-  let lowScore = rounds.sort((a, b) => (a.score > b.score) ? 1 : (a.score === b.score) ? ((a.pars > b.pars) ? 1 : -1) : -1 )[0]
+  let lowScore = rounds.sort((a, b) => (a.score > b.score) ? 1 :
+    (a.score === b.score) ? ((a.pars > b.pars) ? 1 : -1) : -1 )[0]
 
   useEffect(() => {
     fetch(`/api/v1/users/${userId}`)
@@ -94,9 +95,10 @@ const ProfileContainer = (props) => {
       <div className="grid-x profile-details">
         <div className="cell small-6">
           <div className="profile-tile">
-            <h2>
+            <h2 className="text-center">
               <strong>User Details</strong>
             </h2>
+            <hr className="profile-hr"/>
             <h4><strong>Name: </strong>{profile.first} {profile.last}</h4>
             <h4><strong>Location: </strong>{profile.city}, {profile.state}</h4>
             <h4><strong>Handicap: </strong>{profile.handicap}</h4>
@@ -105,9 +107,10 @@ const ProfileContainer = (props) => {
         </div>
         <div className="cell small-6">
           <div className="profile-tile">
-            <h2>
+            <h2 className="text-center">
               <strong>Courses You've Played</strong>
             </h2>
+            <hr className="profile-hr"/>
             {coursesPlayedList}
           </div>
         </div>
