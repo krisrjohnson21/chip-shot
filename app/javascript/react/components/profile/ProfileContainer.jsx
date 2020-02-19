@@ -170,9 +170,9 @@ const ProfileContainer = (props) => {
   })
 
   return (
-    <div className="body-profile">
+    <div className="body-profile text-center">
       <div className="grid-x profile-details">
-        <div className="cell small-6">
+        <div className="cell small-12 medium-6 text-center">
           <div className="profile-tile">
             <h2 className="text-center">
               <strong>User Details</strong>
@@ -187,7 +187,7 @@ const ProfileContainer = (props) => {
             <h4><strong>About Me: </strong>{profile.bio}</h4>
           </div>
         </div>
-        <div className="cell small-6">
+        <div className="cell small-12 medium-6">
           <div className="profile-tile">
             <h2 className="text-center">
               <strong>Courses You've Played</strong>
