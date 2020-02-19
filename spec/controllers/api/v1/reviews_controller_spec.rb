@@ -45,6 +45,7 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
     state: "Massachusetts",
     handicap: 25,
     bio: "Playing since I was in high school",
+    profile_photo: "imagelink.jpg"
   ) }
 
   let!(:second_user) { User.create(
@@ -56,7 +57,7 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
     city: "Quincy",
     state: "Massachusetts",
     handicap: 30,
-    bio: "Discovered the game after retirement",
+    bio: "Discovered the game after retirement"
   ) }
 
   let!(:first_review) { Review.create(

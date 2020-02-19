@@ -30,9 +30,9 @@ gem "active_model_serializers"
 
 gem "faraday"
 
-group :development, :test do
+gem "carrierwave"
 
-end
+gem "fog-aws"
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.

@@ -177,6 +177,9 @@ const ProfileContainer = (props) => {
             <h2 className="text-center">
               <strong>User Details</strong>
             </h2>
+            <div className="text-center">
+              <img src={profile.profilePic} className="profile-photo"/>
+            </div>
             <hr className="profile-hr"/>
             <h4><strong>Name: </strong>{profile.first} {profile.last}</h4>
             <h4><strong>Location: </strong>{profile.city}, {profile.state}</h4>
