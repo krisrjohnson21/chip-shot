@@ -25,10 +25,10 @@ class Api::V1::ReviewsController < ApiController
   end
 
   def destroy
-    course = Course.find(params["course_id"])
+    user_data = User.find(params["user_id"])
     review = Review.find(params["id"])
     review.destroy
-    render json: reviews
+    render json: user_data.reviews
   end
 
   protected

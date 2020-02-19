@@ -64,32 +64,6 @@ const CourseShowContainer = (props) => {
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   };
 
-  const deleteReview = (reviewId) => {
-    fetch(`/api/v1/${courseId}/reviews/${reviewId}`, {
-      credentials: 'same-origin',
-      method: "DELETE",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-    })
-    .then(response => {
-      if (response.ok) {
-        return response
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`, error = new Error(errorMessage)
-        throw error
-      }
-    })
-    .then(response => {
-      return response.json()
-    })
-    .then(response => {
-      setReviews(response)
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`))
-  }
-
   const reviewList = reviews.map(review => {
     return (
       <div key={review.id}>
@@ -99,7 +73,6 @@ const CourseShowContainer = (props) => {
           fullName={review.userFullName}
           rating={review.rating}
           body={review.body}
-          handleDelete={deleteReview}
         />
         <hr />
       </div>
@@ -109,7 +82,11 @@ const CourseShowContainer = (props) => {
   const forecastList = forecast.map(day => {
     dayId++
     let newDayName = dayList[date]
-    date++
+    if (date < 6) {
+      date++
+    } else {
+      date = 0
+    }
 
     let classy = "fas fa-3x fa-"
     if (day.includes("cloudy") || day.includes("cast")) {

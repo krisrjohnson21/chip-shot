@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 
 import RoundTile from "./RoundTile"
 import RoundFormContainer from "./RoundFormContainer"
+import UserReviewTile from "./UserReviewTile"
 
 const ProfileContainer = (props) => {
   const [profile, setProfile] = useState({})
@@ -12,6 +13,7 @@ const ProfileContainer = (props) => {
   const userId = props.match.params.id;
   let lowScore = rounds.sort((a, b) => (a.score > b.score) ? 1 :
     (a.score === b.score) ? ((a.pars > b.pars) ? 1 : -1) : -1 )[0]
+  let i = 0
 
   useEffect(() => {
     fetch(`/api/v1/users/${userId}`)
@@ -35,9 +37,12 @@ const ProfileContainer = (props) => {
   }, [])
 
   const roundList = rounds.map(round => {
-    let classic = "fas fa-3x fa-"
+    const handleRoundDelete = () => {
+      deleteRound(round.id)
+    }
+    let trophy = "fas fa-3x fa-"
     if (round.score === lowScore.score) {
-      classic += "trophy"
+      trophy += "trophy"
     }
 
     return (
@@ -46,19 +51,10 @@ const ProfileContainer = (props) => {
           key={round.id}
           id={round.id}
           round={round}
-          classic={classic}
+          trophy={trophy}
+          handleRoundDelete={handleRoundDelete}
         />
       </span>
-    )
-  })
-
-  const coursesPlayedList = coursesPlayed.map(course => {
-    return (
-      <ul key={course.id}>
-        <Link to={`/courses/${course.id}`}>
-          <li>{course.name}</li>
-        </Link>
-      </ul>
     )
   })
 
@@ -89,6 +85,90 @@ const ProfileContainer = (props) => {
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
   };
+
+  const deleteRound = (roundId) => {
+    fetch(`/api/v1/users/${userId}/rounds/${roundId}`, {
+      credentials: 'same-origin',
+      method: "DELETE",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(response => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`, error = new Error(errorMessage)
+        throw error
+      }
+    })
+    .then(response => {
+      return response.json()
+    })
+    .then(response => {
+      debugger
+      setRounds(response)
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }
+
+  const deleteReview = (reviewId) => {
+    fetch(`/api/v1/users/${userId}/reviews/${reviewId}`, {
+      credentials: 'same-origin',
+      method: "DELETE",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    })
+    .then(response => {
+      if (response.ok) {
+        return response
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`, error = new Error(errorMessage)
+        throw error
+      }
+    })
+    .then(response => {
+      return response.json()
+    })
+    .then(response => {
+      setReviewsLeft(response.reviews)
+    })
+    .catch(error => console.error(`Error in fetch: ${error.message}`))
+  }
+
+  const userReviews = reviewsLeft.map(review => {
+    let course = coursesPlayed[i]
+    i++
+    const handleReviewDelete = () => {
+      deleteReview(review.id)
+    }
+    return (
+      <div key={review.id} className="review-tile">
+        <UserReviewTile
+          key={review.id}
+          id={review.id}
+          course={course}
+          fullName={review.userFullName}
+          rating={review.rating}
+          body={review.body}
+          handleReviewDelete={handleReviewDelete}
+          />
+      </div>
+    );
+  });
+
+  const coursesPlayedList = coursesPlayed.map(course => {
+    return (
+      <ul key={course.id}>
+        <Link to={`/courses/${course.id}`}>
+          <li>{course.name}</li>
+        </Link>
+      </ul>
+    )
+  })
 
   return (
     <div className="body-profile">
@@ -131,6 +211,14 @@ const ProfileContainer = (props) => {
             rounds={profile.rounds}
             />
         </div>
+      </div>
+      <hr />
+      <div className="text-center">
+        <h2>
+          <strong>Reviews You've Left</strong>
+        </h2>
+        {userReviews}
+        <hr />
       </div>
     </div>
   )

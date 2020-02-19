@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       end
       resources :users, only: [:show] do
         resources :rounds, only: [:index, :show, :create, :destroy]
+        resources :reviews, only: [:index, :show, :create, :destroy]
       end
     end
   end

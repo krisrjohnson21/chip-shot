@@ -21,6 +21,14 @@ class Api::V1::RoundsController < ApiController
     end
   end
 
+  def destroy
+    user_data = User.find(params["user_id"])
+    round = Round.find(params["id"])
+    binding.pry
+    round.destroy
+    render json: user_data.rounds
+  end
+
   protected
   def round_params
     params.permit("score", "birdies", "pars", "date", "course")
