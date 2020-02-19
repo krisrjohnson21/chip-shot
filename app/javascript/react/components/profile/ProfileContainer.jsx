@@ -107,7 +107,6 @@ const ProfileContainer = (props) => {
       return response.json()
     })
     .then(response => {
-      debugger
       setRounds(response)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
