@@ -23,7 +23,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 
       expect(returned_json.length).to be 1
 
-      expect(returned_json["user"].length).to be 10
+      expect(returned_json["user"].length).to be 11
 
       expect(returned_json["user"]["first"]).to eq "Darren"
       expect(returned_json["user"]["last"]).to eq "Barnes"

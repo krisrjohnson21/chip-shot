@@ -6,7 +6,8 @@ class UserSerializer < ActiveModel::Serializer
     :city,
     :state,
     :handicap,
-    :bio
+    :bio,
+    :profilePic
   )
 
   has_many :reviews

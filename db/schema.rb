@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_212131) do
     t.string "state", default: "", null: false
     t.string "handicap", default: "25", null: false
     t.text "bio", default: "", null: false
+    t.string "profile_photo"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

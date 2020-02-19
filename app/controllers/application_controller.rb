@@ -14,7 +14,8 @@ class ApplicationController < ActionController::Base
         :city,
         :state,
         :handicap,
-        :bio
+        :bio,
+        :profile_photo
       ])
   end
 end

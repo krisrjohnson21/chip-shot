@@ -10,6 +10,7 @@ RSpec.describe Api::V1::CoursesController, type: :controller do
     state: "Massachusetts",
     handicap: 25,
     bio: "Playing since I was in high school",
+    profile_photo: "imagelink.jpg",
   ) }
 
   let!(:first_course) { Course.create(

@@ -12,6 +12,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :state, null: false, default: ""
       t.string :handicap, null: false, default: 25
       t.text :bio, null: false, default: ""
+      t.string :profile_photo
 
       ## Recoverable
       t.string   :reset_password_token
