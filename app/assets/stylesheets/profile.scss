@@ -8,11 +8,6 @@ $white: #FFFFFF;
   width: 100%;
 }
 
-.profile-details {
-  padding-left: 120px;
-  margin-right: 10px;
-}
-
 .profile-hr {
   width: 90%;
   margin-top: 10px;
@@ -20,7 +15,9 @@ $white: #FFFFFF;
 }
 
 .profile-photo {
-  width: 90%;
+  width: auto;
+  height: 200px;
+  overflow: hidden;
   border-radius: 10px;
 }
 
@@ -47,7 +44,7 @@ li {
 }
 
 .profile-tile {
-  display: inline-block;
+  display: inline-grid;
   align-items: center;
   border: 1px solid $dark-green;
   border-radius: 10px;

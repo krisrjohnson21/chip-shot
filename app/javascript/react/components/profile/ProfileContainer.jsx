@@ -170,7 +170,7 @@ const ProfileContainer = (props) => {
   })
 
   return (
-    <div className="body-profile">
+    <div className="body-profile text-center">
       <div className="grid-x profile-details">
         <div className="cell small-6">
           <div className="profile-tile">
