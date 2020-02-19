@@ -24,6 +24,13 @@ class Api::V1::ReviewsController < ApiController
     end
   end
 
+  def destroy
+    user_data = User.find(params["user_id"])
+    review = Review.find(params["id"])
+    review.destroy
+    render json: user_data.reviews
+  end
+
   protected
   def review_params
     params.permit("rating", "body")

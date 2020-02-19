@@ -14,6 +14,7 @@ const CourseShowContainer = (props) => {
   let dayList = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
   let date = today.getDay()
   let dayName = dayList[date];
+  let dayId = 0
 
   useEffect(() => {
     fetch(`/api/v1/courses/${courseId}`)
@@ -33,7 +34,7 @@ const CourseShowContainer = (props) => {
       setForecast(response.forecast)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`))
-  }, [reviews])
+  }, [reviews.length])
 
   const addNewReview = formPayload => {
     fetch(`/api/v1/courses/${courseId}/reviews/`, {
@@ -79,8 +80,13 @@ const CourseShowContainer = (props) => {
   });
 
   const forecastList = forecast.map(day => {
+    dayId++
     let newDayName = dayList[date]
-    date++
+    if (date < 6) {
+      date++
+    } else {
+      date = 0
+    }
 
     let classy = "fas fa-3x fa-"
     if (day.includes("cloudy") || day.includes("cast")) {
@@ -96,14 +102,12 @@ const CourseShowContainer = (props) => {
     }
 
     return (
-      <span className="forecast-span">
-        <ForecastTile
-          key={day.id}
-          day={day}
-          date={newDayName}
-          classy={classy}
-        />
-      </span>
+      <ForecastTile
+        key={dayId}
+        day={day}
+        date={newDayName}
+        classy={classy}
+      />
     );
   });
 

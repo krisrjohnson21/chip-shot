@@ -28,9 +28,10 @@ const RoundTile = (props) => {
           <strong>Pars: </strong>{props.round.pars}
         </h4>
         <span className="trophy">
-          <i id="trophy-icon" className={props.classic}></i>
+          <i id="trophy-icon" className={props.trophy}></i>
         </span>
       </div>
+      <input type="button" className="button delete" onClick={props.handleRoundDelete} value="Delete Round"/>
     </span>
   )
 }
