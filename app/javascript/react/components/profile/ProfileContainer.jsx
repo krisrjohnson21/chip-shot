@@ -174,10 +174,10 @@ const ProfileContainer = (props) => {
       <div className="grid-x profile-details">
         <div className="cell small-12 medium-6 text-center">
           <div className="profile-tile">
-            <h2 className="text-center">
+            <h2 className="center">
               <strong>User Details</strong>
             </h2>
-            <div className="text-center">
+            <div className="center">
               <img src={profile.profilePic} className="profile-photo"/>
             </div>
             <hr className="profile-hr"/>
@@ -189,7 +189,7 @@ const ProfileContainer = (props) => {
         </div>
         <div className="cell small-12 medium-6">
           <div className="profile-tile">
-            <h2 className="text-center">
+            <h2 className="center">
               <strong>Courses You've Played</strong>
             </h2>
             <hr className="profile-hr"/>

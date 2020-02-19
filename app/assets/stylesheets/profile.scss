@@ -38,6 +38,10 @@ li {
   box-shadow: inset 0 0 3px black;
 }
 
+.center {
+  margin: 0px auto;
+}
+
 .delete {
   width: 100px;
   margin: 10px auto;
@@ -45,7 +49,6 @@ li {
 
 .profile-tile {
   display: inline-grid;
-  align-items: center;
   border: 1px solid $dark-green;
   border-radius: 10px;
   padding: 10px 10px 10px 20px;
