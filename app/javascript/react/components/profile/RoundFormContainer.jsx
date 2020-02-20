@@ -81,7 +81,7 @@ const RoundFormContainer = (props) => {
         handleChange={handleFieldChange}
       />
 
-      <label>Date You Played (dd/mm/yyyy)</label>
+    <label>Date You Played (mm/dd/yyyy)</label>
       <TextField
         type="text"
         fieldName="date"
