@@ -84,60 +84,68 @@ const EditRoundFormContainer = (props) => {
   }
 
   return (
-    <form className="round-form" onSubmit={handleEditSubmit}>
-      <div>
-        <h5>{props.signInError}</h5>
-      </div>
-      <ErrorList errors={errors} />
-      <label>Overall Score</label>
-      <TextField
-        type="text"
-        fieldName="score"
-        id="score"
-        content={roundInfo.score}
-        handleChange={handleEditFieldChange}
-      />
+    <div className="text-center">
+      <h2>
+        <strong>Edit Round</strong>
+      </h2>
+      <form className="form" onSubmit={handleEditSubmit}>
+        <div>
+          <h5>{props.signInError}</h5>
+        </div>
+        <ErrorList errors={errors} />
+        <label>Overall Score</label>
+        <TextField
+          type="text"
+          fieldName="score"
+          id="score"
+          content={roundInfo.score}
+          handleChange={handleEditFieldChange}
+          />
 
-    <label>Course Name</label>
-      <TextField
-        type="text"
-        fieldName="course"
-        id="course"
-        content={roundInfo.course}
-        handleChange={handleEditFieldChange}
-      />
+        <label>Course Name</label>
+        <TextField
+          type="text"
+          fieldName="course"
+          id="course"
+          content={roundInfo.course}
+          handleChange={handleEditFieldChange}
+          />
 
-    <label>Date You Played (dd/mm/yyyy)</label>
-      <TextField
-        type="text"
-        fieldName="date"
-        id="date"
-        content={roundInfo.date}
-        handleChange={handleEditFieldChange}
-      />
+        <label>Date You Played (dd/mm/yyyy)</label>
+        <TextField
+          type="text"
+          fieldName="date"
+          id="date"
+          content={roundInfo.date}
+          handleChange={handleEditFieldChange}
+          />
 
-    <label>Number of Birdies</label>
-      <TextField
-        type="text"
-        fieldName="birdies"
-        id="birdies"
-        content={roundInfo.birdies}
-        handleChange={handleEditFieldChange}
-      />
+        <label>Number of Birdies</label>
+        <TextField
+          type="text"
+          fieldName="birdies"
+          id="birdies"
+          content={roundInfo.birdies}
+          handleChange={handleEditFieldChange}
+          />
 
-    <label>Number of Pars</label>
-      <TextField
-        type="text"
-        fieldName="pars"
-        id="pars"
-        content={roundInfo.pars}
-        handleChange={handleEditFieldChange}
-      />
+        <label>Number of Pars</label>
+        <TextField
+          type="text"
+          fieldName="pars"
+          id="pars"
+          content={roundInfo.pars}
+          handleChange={handleEditFieldChange}
+          />
 
-      <div className="review-button-group">
-        <input className="button" type="submit" value="Update Round" />
-      </div>
-    </form>
+        <div className="review-button-group">
+          <input className="button" type="submit" value="Update Round" />
+          <Link to={`/users/${userId}/profile`} className="button">
+            Discard Changes
+          </Link>
+        </div>
+      </form>
+    </div>
   )
 }
 
