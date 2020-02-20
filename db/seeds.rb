@@ -259,7 +259,7 @@ c14 = Course.create(
 )
 
 c15 = Course.create(
-  name: "The Country Club of South Carolina",
+  name: "Country Club of South Carolina",
   membership: "Public",
   holes: 18,
   par: 72,
