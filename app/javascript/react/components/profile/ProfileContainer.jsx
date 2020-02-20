@@ -177,7 +177,7 @@ const ProfileContainer = (props) => {
             <h2 className="center">
               <strong>User Details</strong>
             </h2>
-            <div className="center">
+            <div className="center-pic">
               <img src={profile.profilePic} className="profile-photo"/>
             </div>
             <hr className="profile-hr"/>

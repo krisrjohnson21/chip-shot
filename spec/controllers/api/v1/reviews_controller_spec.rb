@@ -76,7 +76,7 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
     course: second_course
   ).to_json }
 
-  describe "GET#show" do
+  describe "GET#index" do
     it "should return the courses and their reviews" do
       get :index, params: {
         course_id: first_course.id,

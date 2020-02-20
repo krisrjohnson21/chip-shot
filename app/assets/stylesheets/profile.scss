@@ -8,6 +8,11 @@ $white: #FFFFFF;
   width: 100%;
 }
 
+.profile-details {
+  width: 100%;
+  padding: 0px 100px;
+}
+
 .profile-hr {
   width: 90%;
   margin-top: 10px;
@@ -15,8 +20,8 @@ $white: #FFFFFF;
 }
 
 .profile-photo {
-  width: auto;
-  height: 200px;
+  width: inherit;
+  height: inherit;
   overflow: hidden;
   border-radius: 10px;
 }
@@ -26,6 +31,10 @@ li {
   margin-left: 10px;
   color: $dark-green;
   text-decoration: underline;
+}
+
+li:hover {
+  color: $pop-green;
 }
 
 .round-label {
@@ -40,6 +49,12 @@ li {
 
 .center {
   margin: 0px auto;
+}
+
+.center-pic {
+  margin: 0px auto;
+  height: 200px;
+  width: 70%;
 }
 
 .delete {

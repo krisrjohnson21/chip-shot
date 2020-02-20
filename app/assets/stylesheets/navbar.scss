@@ -7,6 +7,9 @@ $white: #FFFFFF;
   a {
     color: $white;
   }
+  a:hover {
+    color: $white;
+  }
   .button {
     background-color: $dark-green;
     color: $white;

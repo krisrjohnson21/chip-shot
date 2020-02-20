@@ -18,13 +18,12 @@ $white: #FFFFFF;
   box-shadow: inset 0 0 10px $dark-green;
 }
 
-.external-link {
-  font-size: 24px;
-  color: $white;
+a {
+  color: $dark-green;
 }
 
-.external-link:hover {
-  color: $white;
+a:hover {
+  color: $pop-green;
 }
 
 .flip {

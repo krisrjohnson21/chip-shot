@@ -1,6 +1,6 @@
 <h2 class="text-center">Edit <%= resource_name.to_s.humanize %></h2>
 
-<div class="form">  
+<div class="form">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form" }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
@@ -60,6 +60,11 @@
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :profile_photo, "Upload a profile photo" %><br />
+    <%= f.file_field :profile_photo %>
   </div>
 
   <div class="actions">

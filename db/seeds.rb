@@ -104,8 +104,7 @@ u1 = User.create(
   city: "Orlando",
   state: "Florida",
   handicap: 30,
-  bio: "Mostly play to make new friends",
-  profile_photo: "https://chip-shot-development.s3.amazonaws.com/uploads/user/profile_photo/1/bill-keegan.jpg"
+  bio: "Mostly play to make new friends"
 )
 
 u2 = User.create(
