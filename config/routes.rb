@@ -12,11 +12,11 @@ Rails.application.routes.draw do
     namespace "v1" do
       post "courses/search", to: "courses#search"
       resources :courses, only: [:index, :show] do
-        resources :reviews, only: [:index, :show, :create, :destroy]
+        resources :reviews, only: [:index, :show, :create, :destroy, :update]
       end
       resources :users, only: [:show] do
-        resources :rounds, only: [:index, :show, :create, :destroy]
-        resources :reviews, only: [:index, :show, :create, :destroy]
+        resources :rounds, only: [:index, :show, :create, :destroy, :update]
+        resources :reviews, only: [:index, :show, :create, :destroy, :update]
       end
     end
   end

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import RoundTile from "./RoundTile"
 import RoundFormContainer from "./RoundFormContainer"
 import UserReviewTile from "./UserReviewTile"
+import EditRoundFormContainer from "./EditRoundFormContainer"
 
 const ProfileContainer = (props) => {
   const [profile, setProfile] = useState({})
@@ -50,6 +51,7 @@ const ProfileContainer = (props) => {
         <RoundTile
           key={round.id}
           id={round.id}
+          user={round.user_id}
           round={round}
           trophy={trophy}
           handleRoundDelete={handleRoundDelete}
@@ -100,6 +102,7 @@ const ProfileContainer = (props) => {
         return response
       } else {
         let errorMessage = `${response.status} (${response.statusText})`, error = new Error(errorMessage)
+          error = new Error(errorMessage)
         throw error
       }
     })
@@ -126,6 +129,7 @@ const ProfileContainer = (props) => {
         return response
       } else {
         let errorMessage = `${response.status} (${response.statusText})`, error = new Error(errorMessage)
+          error = new Error(errorMessage)
         throw error
       }
     })
@@ -211,7 +215,7 @@ const ProfileContainer = (props) => {
           <RoundFormContainer
             addNewRound={addNewRound}
             rounds={profile.rounds}
-            />
+          />
         </div>
       </div>
       <hr />
