@@ -28,8 +28,20 @@ class Api::V1::RoundsController < ApiController
     render json: user_data.rounds
   end
 
+  def update
+    user_data = User.find(params["user_id"])
+    round = Round.find(params["id"])
+    round.update_attributes(edit_round_params)
+    render json: user_data.rounds
+  end
+
+
   protected
   def round_params
+    params.permit("score", "birdies", "pars", "date", "course")
+  end
+
+  def edit_round_params
     params.permit("score", "birdies", "pars", "date", "course")
   end
 

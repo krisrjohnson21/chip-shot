@@ -6,6 +6,8 @@ import ErrorList from '../review/ErrorList'
 
 const RoundFormContainer = (props) => {
   const [newRound, setNewRound] = useState({
+    course: "",
+    date: "mm/dd/yyyy",
     score: 75,
     birdies: 0,
     pars: 0
@@ -15,6 +17,8 @@ const RoundFormContainer = (props) => {
 
   const clearForm = (event) => {
     setNewRound({
+      course: "",
+      date: "mm/dd/yyyy",
       score: 75,
       birdies: 0,
       pars: 0

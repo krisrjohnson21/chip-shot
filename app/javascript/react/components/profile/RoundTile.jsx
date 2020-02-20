@@ -1,6 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 const RoundTile = (props) => {
+  const roundId = props.id
+  const userId = props.user
+
   return (
     <span id={props.id} className="round-tile">
       <div className="round-text">
@@ -31,7 +35,12 @@ const RoundTile = (props) => {
           <i id="trophy-icon" className={props.trophy}></i>
         </span>
       </div>
-      <input type="button" className="button delete" onClick={props.handleRoundDelete} value="Delete Round"/>
+      <div className="round-button-group">
+        <Link to={`/users/${userId}/rounds/${roundId}/update`} className="button">
+          Edit Round
+        </Link>
+        <input type="button" className="button delete" onClick={props.handleRoundDelete} value="Delete Round"/>
+      </div>
     </span>
   )
 }
