@@ -33,6 +33,10 @@ li {
   text-decoration: underline;
 }
 
+li:hover {
+  color: $pop-green;
+}
+
 .round-label {
   width: 30%;
 }

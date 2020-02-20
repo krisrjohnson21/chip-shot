@@ -146,6 +146,9 @@ const CourseShowContainer = (props) => {
           <strong>Five Day Forecast for {course.name}</strong>
         </h2>
         {forecastList}
+        <h4>
+          <a href="https://darksky.net/poweredby/">Powered by Dark Sky</a>
+        </h4>
       </div>
     </>
   )
