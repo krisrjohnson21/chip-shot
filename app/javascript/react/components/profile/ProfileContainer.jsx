@@ -17,12 +17,25 @@ const ProfileContainer = (props) => {
   let scores = []
   rounds.map((round) => {
     scores.push(round.score)
-    return scores.sort()
+    return scores
     }
   )
   let i = 0
-  let lowScore = scores.sort()[0];
 
+  let findMin = (arr) => {
+    let min = arr[0];
+
+    for (let i = 1, length=arr.length; i < length; i++) {
+      let v = arr[i];
+      min = (v < min) ? v : min;
+    }
+
+    return min;
+  }
+
+  let lowScore = findMin(scores)
+
+debugger
   useEffect(() => {
     fetch(`/api/v1/users/${userId}`)
     .then(response => {
@@ -179,6 +192,8 @@ const ProfileContainer = (props) => {
       </ul>
     )
   })
+
+  debugger
 
   return (
     <div className="body-profile text-center">

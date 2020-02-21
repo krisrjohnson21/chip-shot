@@ -7,6 +7,7 @@ import ErrorList from '../review/ErrorList'
 const EditRoundFormContainer = (props) => {
   const userId = props.match.params.id;
   const roundId = props.match.params.roundId;
+  debugger
 
   const [rounds, setRounds] = useState([])
   const [shouldRedirect, setShouldRedirect] = useState(false)
@@ -111,7 +112,7 @@ const EditRoundFormContainer = (props) => {
           handleChange={handleEditFieldChange}
           />
 
-        <label>Date You Played (dd/mm/yyyy)</label>
+        <label>Date You Played (mm/dd/yyyy)</label>
         <TextField
           type="text"
           fieldName="date"
@@ -121,22 +122,62 @@ const EditRoundFormContainer = (props) => {
           />
 
         <label>Number of Birdies</label>
-        <TextField
-          type="text"
-          fieldName="birdies"
+        <select
+          className="select-field"
+          name="birdies"
           id="birdies"
-          content={roundInfo.birdies}
-          handleChange={handleEditFieldChange}
-          />
+          onChange={handleFieldChange}
+          value={newRound.birdies}
+        >
+          <option value={0}>0</option>
+          <option value={1}>1</option>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+          <option value={4}>4</option>
+          <option value={5}>5</option>
+          <option value={6}>6</option>
+          <option value={7}>7</option>
+          <option value={8}>8</option>
+          <option value={9}>9</option>
+          <option value={10}>10</option>
+          <option value={11}>11</option>
+          <option value={12}>12</option>
+          <option value={13}>13</option>
+          <option value={14}>14</option>
+          <option value={15}>15</option>
+          <option value={16}>16</option>
+          <option value={17}>17</option>
+          <option value={18}>18</option>
+        </select>
 
         <label>Number of Pars</label>
-        <TextField
-          type="text"
-          fieldName="pars"
-          id="pars"
-          content={roundInfo.pars}
-          handleChange={handleEditFieldChange}
-          />
+          <select
+            className="select-field"
+            name="pars"
+            id="pars"
+            onChange={handleFieldChange}
+            value={newRound.pars}
+          >
+          <option value={0}>0</option>
+          <option value={1}>1</option>
+          <option value={2}>2</option>
+          <option value={3}>3</option>
+          <option value={4}>4</option>
+          <option value={5}>5</option>
+          <option value={6}>6</option>
+          <option value={7}>7</option>
+          <option value={8}>8</option>
+          <option value={9}>9</option>
+          <option value={10}>10</option>
+          <option value={11}>11</option>
+          <option value={12}>12</option>
+          <option value={13}>13</option>
+          <option value={14}>14</option>
+          <option value={15}>15</option>
+          <option value={16}>16</option>
+          <option value={17}>17</option>
+          <option value={18}>18</option>
+        </select>
 
         <div className="review-button-group">
           <input className="button" type="submit" value="Update Round" />
