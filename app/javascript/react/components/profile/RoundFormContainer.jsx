@@ -13,8 +13,6 @@ const RoundFormContainer = (props) => {
     pars: 0
   })
 
-  const coursesList = 
-
   const [errors, setErrors] = useState({})
 
   const clearForm = (event) => {
