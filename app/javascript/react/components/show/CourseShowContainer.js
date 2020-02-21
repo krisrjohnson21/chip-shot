@@ -115,7 +115,7 @@ const CourseShowContainer = (props) => {
     <>
       <div className="body">
         <div className="grid-x">
-          <div className="cell small-6">
+          <div className="cell small-6 text-center">
             <CourseShow key={course.id} course={course} />
           </div>
 

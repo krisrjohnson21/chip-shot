@@ -77,12 +77,12 @@ a:hover {
   margin-right: 2px;
   margin-top: 30px;
   margin-bottom: 1em;
-  width: 550px;
+  max-width: 550px;
+  min-width: 250px;
   > .front,
   > .back {
     display: block;
     color: $white;
-    width: inherit;
     background-size: cover !important;
     background-position: center !important;
     height: 600px;
@@ -104,7 +104,8 @@ a:hover {
 }
 
 .button-group {
-  margin-left: 100px;
+  display: block;
+  align-items: center;
   .show-button {
     margin: 0px 5px 0px 5px;
     border-radius: 10px;
@@ -125,8 +126,7 @@ a:hover {
 
 #weather-icon {
   color: $pop-green;
-  margin-left: -30px;
-  margin-top: 10px;
+  margin: 10px auto;
 }
 
 label {
