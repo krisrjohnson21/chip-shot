@@ -24,18 +24,15 @@ const ProfileContainer = (props) => {
 
   let findMin = (arr) => {
     let min = arr[0];
-
     for (let i = 1, length=arr.length; i < length; i++) {
       let v = arr[i];
       min = (v < min) ? v : min;
     }
-
     return min;
   }
 
   let lowScore = findMin(scores)
 
-debugger
   useEffect(() => {
     fetch(`/api/v1/users/${userId}`)
     .then(response => {
