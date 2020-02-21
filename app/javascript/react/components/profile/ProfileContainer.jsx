@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
+import { Chart } from "react-google-charts";
 
 import RoundTile from "./RoundTile"
 import RoundFormContainer from "./RoundFormContainer"
 import UserReviewTile from "./UserReviewTile"
+import RoundDataChart from "./RoundDataChart"
 import EditRoundFormContainer from "./EditRoundFormContainer"
 
 const ProfileContainer = (props) => {
@@ -12,9 +14,14 @@ const ProfileContainer = (props) => {
   const [reviewsLeft, setReviewsLeft] = useState([])
   const [rounds, setRounds] = useState([])
   const userId = props.match.params.id;
-  let lowScore = rounds.sort((a, b) => (a.score > b.score) ? 1 :
-    (a.score === b.score) ? ((a.pars > b.pars) ? 1 : -1) : -1 )[0]
+  let scores = []
+  rounds.map((round) => {
+    scores.push(round.score)
+    return scores.sort()
+    }
+  )
   let i = 0
+  let lowScore = scores.sort()[0];
 
   useEffect(() => {
     fetch(`/api/v1/users/${userId}`)
@@ -42,7 +49,7 @@ const ProfileContainer = (props) => {
       deleteRound(round.id)
     }
     let trophy = "fas fa-3x fa-"
-    if (round.score === lowScore.score) {
+    if (round.score === lowScore) {
       trophy += "trophy"
     }
 
@@ -208,7 +215,16 @@ const ProfileContainer = (props) => {
         </h2>
         {roundList}
         <hr />
-        <div className="form-tile">
+        <div className="progress-tile cell small-12 medium-6 text-center">
+          <h2>
+            <strong>Track Your Progress</strong>
+          </h2>
+          <RoundDataChart
+            rounds={rounds}
+            profile={profile}
+          />
+        </div>
+        <div className="form-tile cell small-12 medium-6 text-center">
           <h2>
             <strong>Add New Round</strong>
           </h2>
