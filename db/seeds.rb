@@ -259,21 +259,21 @@ c14 = Course.create(
 )
 
 c15 = Course.create(
-  name: "Country Club of South Carolina",
+  name: "Kiawah Island Ocean Course",
   membership: "Public",
   holes: 18,
   par: 72,
-  address: "3525 McDonald Boulevard",
-  city: "Florence",
+  address: "1000 Ocean Course Dr",
+  city: "Kiawah Island",
   state: "South Carolina",
-  website: "www.countryclubsc.com",
+  website: "https://kiawahresort.com/golf/the-ocean-course/",
   range: "Yes",
   carts: "Yes",
   rentals: "Yes",
   lessons: "Yes",
-  url: "https://lh3.googleusercontent.com/proxy/UMp7gI-OuW8oMShXfSQ8cTe2t8TeAV-IjbMmGk94ai8ZerS5Fhf5NdvOlrxrzA6K-kIg8gz4jkRCQte9cxRssnQFYLh4_BCpdP9EzqgjAxwqtKLGZlFExWyaUSEDV-pSIWbCOZg",
-  latitude: 34.1954,
-  longitude: -79.7626
+  url: "https://www.charlestoncvb.com/beaches/assets/images/kiawah-island/cta-1.jpg",
+  latitude: 32.6082,
+  longitude: -80.0848
 )
 
 c16 = Course.create(

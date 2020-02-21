@@ -47,7 +47,7 @@ const CourseShow = (props) => {
           </div>
         </div>
       </div>
-      <div className="button-group">
+      <div className="button-group text-center">
         <a href={props.course.website}
           target="blank"
           className="button show-button"
