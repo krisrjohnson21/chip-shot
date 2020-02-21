@@ -190,8 +190,6 @@ const ProfileContainer = (props) => {
     )
   })
 
-  debugger
-
   return (
     <div className="body-profile text-center">
       <div className="grid-x profile-details">
