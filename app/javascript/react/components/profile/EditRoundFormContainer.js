@@ -7,7 +7,6 @@ import ErrorList from '../review/ErrorList'
 const EditRoundFormContainer = (props) => {
   const userId = props.match.params.id;
   const roundId = props.match.params.roundId;
-  debugger
 
   const [rounds, setRounds] = useState([])
   const [shouldRedirect, setShouldRedirect] = useState(false)
