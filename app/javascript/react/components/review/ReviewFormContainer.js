@@ -59,17 +59,25 @@ const ReviewFormContainer = props => {
         <h5>{props.signInError}</h5>
       </div>
       <ErrorList errors={errors} />
+
       <label>Course Rating (1-5)</label>
-      <TextField
-        type="text"
-        fieldName="rating"
+      <select
+        className="select-field"
+        name="rating"
         id="rating"
-        content={newReview.rating}
-        handleChange={handleFieldChange}
-      />
+        onChange={handleFieldChange}
+        value={newReview.rating}
+      >
+        <option value={1}>1</option>
+        <option value={2}>2</option>
+        <option value={3}>3</option>
+        <option value={4}>4</option>
+        <option value={5}>5</option>
+      </select>
 
       <label>Course Review</label>
       <TextField
+        className="select-field"
         type="text"
         fieldName="body"
         id="body"
