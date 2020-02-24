@@ -78,6 +78,8 @@ RSpec.describe Api::V1::ReviewsController, type: :controller do
 
   describe "GET#index" do
     it "should return the courses and their reviews" do
+      sign_in first_user
+
       get :index, params: {
         course_id: first_course.id,
         reviews: first_course.reviews

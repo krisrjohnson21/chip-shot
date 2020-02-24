@@ -15,6 +15,8 @@ RSpec.describe Api::V1::UsersController, type: :controller do
 
   describe "GET#show" do
     it "should return the user and their details" do
+      sign_in first_user
+
       get :show, params: {id: first_user.id}
       returned_json = JSON.parse(response.body)
 
