@@ -1,5 +1,4 @@
 class Api::V1::CoursesController < ApiController
-  before_action :authenticate_user!, except: [:show, :index]
 
   def index
     render json: Course.all
