@@ -17,9 +17,7 @@ const CourseShowContainer = (props) => {
   let dayId = 0
 
   useEffect(() => {
-    fetch(`/api/v1/courses/${courseId}`, {
-      credentials: "same-origin"
-    })
+    fetch(`/api/v1/courses/${courseId}`)
     .then(response => {
       if (response.ok) {
         return response

@@ -34,9 +34,7 @@ const ProfileContainer = (props) => {
   let lowScore = findMin(scores)
 
   useEffect(() => {
-    fetch(`/api/v1/users/${userId}`, {
-      credentials: "same-origin",
-    })
+    fetch(`/api/v1/users/${userId}`)
     .then(response => {
       if (response.ok) {
         return response;
