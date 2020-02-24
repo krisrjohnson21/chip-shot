@@ -33,6 +33,8 @@ RSpec.describe Api::V1::RoundsController, type: :controller do
 
   describe "GET#index" do
     it "should return the user's rounds" do
+      sign_in first_user
+      
       get :index, params: {
         user_id: first_user.id,
         rounds: first_user.rounds

@@ -1,4 +1,5 @@
 class Api::V1::RoundsController < ApiController
+  before_action :authenticate_user!, except: [:show]
 
   def index
     render json: Round.all
