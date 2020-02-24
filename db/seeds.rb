@@ -421,7 +421,7 @@ u4 = User.create(
   first: "Liz",
   last: "Willis",
   email: "liz@aol.com",
-  password: "password3",
+  password: "password4",
   city: "Milwaukee",
   state: "Wisconsin",
   handicap: 20,
