@@ -17,7 +17,9 @@ const CourseShowContainer = (props) => {
   let dayId = 0
 
   useEffect(() => {
-    fetch(`/api/v1/courses/${courseId}`)
+    fetch(`/api/v1/courses/${courseId}`, {
+      credentials: "same-origin"
+    })
     .then(response => {
       if (response.ok) {
         return response
@@ -38,12 +40,12 @@ const CourseShowContainer = (props) => {
 
   const addNewReview = formPayload => {
     fetch(`/api/v1/courses/${courseId}/reviews/`, {
-      credentials: 'same-origin',
-      method: 'POST',
+      credentials: "same-origin",
+      method: "POST",
       body: JSON.stringify(formPayload),
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
+        Accept: "application/json",
+        "Content-Type": "application/json"
       }
     })
       .then(response => {

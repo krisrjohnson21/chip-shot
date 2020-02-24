@@ -34,7 +34,9 @@ const ProfileContainer = (props) => {
   let lowScore = findMin(scores)
 
   useEffect(() => {
-    fetch(`/api/v1/users/${userId}`)
+    fetch(`/api/v1/users/${userId}`, {
+      credentials: "same-origin",
+    })
     .then(response => {
       if (response.ok) {
         return response;
@@ -79,12 +81,12 @@ const ProfileContainer = (props) => {
 
   const addNewRound = formPayload => {
     fetch(`/api/v1/users/${userId}/rounds/`, {
-      credentials: 'same-origin',
-      method: 'POST',
+      credentials: "same-origin",
+      method: "POST",
       body: JSON.stringify(formPayload),
       headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json'
+        Accept: "application/json",
+        "Content-Type": "application/json"
       }
     })
       .then(response => {
@@ -107,11 +109,11 @@ const ProfileContainer = (props) => {
 
   const deleteRound = (roundId) => {
     fetch(`/api/v1/users/${userId}/rounds/${roundId}`, {
-      credentials: 'same-origin',
+      credentials: "same-origin",
       method: "DELETE",
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        "Accept": "application/json",
+        "Content-Type": "application/json"
       },
     })
     .then(response => {
@@ -134,11 +136,11 @@ const ProfileContainer = (props) => {
 
   const deleteReview = (reviewId) => {
     fetch(`/api/v1/users/${userId}/reviews/${reviewId}`, {
-      credentials: 'same-origin',
+      credentials: "same-origin",
       method: "DELETE",
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        "Accept": "application/json",
+        "Content-Type": "application/json"
       },
     })
     .then(response => {
