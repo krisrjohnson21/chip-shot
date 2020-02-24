@@ -1,5 +1,5 @@
 class Api::V1::ReviewsController < ApiController
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: [:show]
 
   def index
     render json: Review.all
