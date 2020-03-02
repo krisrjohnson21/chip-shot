@@ -32,7 +32,13 @@ class Api::V1::CoursesController < ApiController
   end
 
   def search
-    @courses = Course.where("name ILIKE ? OR state ILIKE ?", "%#{params["search_string"]}%", "%#{params['search_string']}%")
+    @courses = Course.where(
+      "name ILIKE ? OR state ILIKE ? OR city ILIKE ? OR membership ILIKE ?",
+      "%#{params["search_string"]}%",
+      "%#{params['search_string']}%",
+      "%#{params['search_string']}%",
+      "%#{params['search_string']}%"
+    )
     render json: @courses
   end
 end

@@ -6,7 +6,8 @@ const SearchBar = (props) => {
 
   return (
     <form onSubmit={props.handleSubmit} className="search-bar">
-      <h4>Find a course by name or state</h4>
+      <h3>Find a course</h3>
+      <p>Search by course name, city, state, or membership type</p>
       <input
         type="text"
         name="searchString"
