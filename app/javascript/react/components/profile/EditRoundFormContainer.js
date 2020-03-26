@@ -125,8 +125,8 @@ const EditRoundFormContainer = (props) => {
           className="select-field"
           name="birdies"
           id="birdies"
-          onChange={handleFieldChange}
-          value={newRound.birdies}
+          onChange={handleEditFieldChange}
+          value={roundInfo.birdies}
         >
           <option value={0}>0</option>
           <option value={1}>1</option>
@@ -154,8 +154,8 @@ const EditRoundFormContainer = (props) => {
             className="select-field"
             name="pars"
             id="pars"
-            onChange={handleFieldChange}
-            value={newRound.pars}
+            onChange={handleEditFieldChange}
+            value={roundInfo.pars}
           >
           <option value={0}>0</option>
           <option value={1}>1</option>
